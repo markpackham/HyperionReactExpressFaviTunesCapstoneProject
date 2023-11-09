@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import axios from "axios";
 import DOMPurify from "dompurify";
 import Swal from "sweetalert2";
 import { urlPath } from "../../global";
@@ -39,12 +40,13 @@ const Register = () => {
       };
 
       // Send Post to Express
-      fetch(`${urlPath}/register`, {
+      axios({
         method: "POST",
+        url: `${urlPath}/register`,
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(user),
+        data: user,
       })
         .then((res) => {
           if (res.status === 200) {
