@@ -44,10 +44,10 @@ mongoose.connect(uri, { useNewUrlParser: true }).then(
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Set up routes to be handled from: http://localhost:8080/todos
-app.use("/todos/secure", getTodos);
-app.use("/todos", login);
-app.use("/todos", register);
+// Set up routes to be handled from: http://localhost:8080/favs
+app.use("/favs/secure", getTodos);
+app.use("/favs", login);
+app.use("/favs", register);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
