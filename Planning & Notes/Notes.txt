@@ -1,0 +1,12 @@
+Have Get All non secure - anyone can Read all items
+
+Show teaser info and not full info of items.
+Use Bootstrap modal for "More Info"
+
+Start with users and tokens reworking the Middleware main project
+
+Have global.js for urlPath variable.
+
+Try to have as many React Components as possible rather than dumping everything in Home.
+Home can show teasers but not full list. Base form validation off Middleware Project Register form since that has
+best formik settings.
