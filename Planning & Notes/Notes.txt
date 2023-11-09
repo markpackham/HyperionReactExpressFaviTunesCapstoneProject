@@ -7,6 +7,8 @@ Start with users and tokens reworking the Middleware main project
 
 Have global.js for urlPath variable.
 
+Favor axios over fetch
+
 Try to have as many React Components as possible rather than dumping everything in Home.
 Home can show teasers but not full list. Base form validation off Middleware Project Register form since that has
 best formik settings.
