@@ -13,7 +13,7 @@ const MusicSearch = () => {
           term: searchTerm,
           media: "music",
           entity: "song",
-          limit: 10,
+          limit: 7,
         },
       });
       setSearchResults(response.data.results);

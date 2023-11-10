@@ -14,7 +14,7 @@ const BookSearch = () => {
           term: searchTerm,
           media: "ebook",
           entity: "ebook",
-          limit: 10,
+          limit: 7,
         },
       });
       setSearchResults(response.data.results);
