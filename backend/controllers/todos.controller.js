@@ -35,35 +35,6 @@ exports.findAll = (req, res) => {
     });
 };
 
-exports.updateById = async (req, res) => {
-  try {
-    // Grab todo to update by id
-    const todo_id = req.params.todo_id;
-
-    // Define the new data to update
-    const update = {
-      todo_id: req.body.todo_id,
-      todo_name: req.body.todo_name,
-      todo_description: req.body.todo_description,
-    };
-
-    const updatedTodo = await Todo.findOneAndUpdate(
-      { todo_id: todo_id },
-      update,
-      { new: true }
-    );
-
-    if (updatedTodo) {
-      res.status(200);
-    } else {
-      res.status(404).send({ message: "Todo not found" });
-    }
-  } catch (error) {
-    console.error("Something went wrong when updating data.", error);
-    res.status(500).send({ message: "An error occurred while updating." });
-  }
-};
-
 exports.deleteById = async (req, res) => {
   try {
     const todo_id = req.params.todo_id;
