@@ -1,5 +1,5 @@
 const RemoveBook = () => {
-  return <div>RemoveBook</div>;
+  return <button className="btn btn-danger">Remove</button>;
 };
 
 export default RemoveBook;
