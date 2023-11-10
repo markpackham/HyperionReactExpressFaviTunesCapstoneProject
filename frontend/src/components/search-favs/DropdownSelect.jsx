@@ -2,6 +2,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 
 const DropdownSelect = ({ options, value, onChange }) => {
+  // Hide until clicked on
   const [show, setShow] = useState(false);
 
   const handleToggle = () => {
@@ -21,6 +22,7 @@ const DropdownSelect = ({ options, value, onChange }) => {
       >
         {value}
       </button>
+      {/* Only show ul if there is something to show */}
       {show && (
         <ul className="dropdown-list">
           {options.map((option) => (

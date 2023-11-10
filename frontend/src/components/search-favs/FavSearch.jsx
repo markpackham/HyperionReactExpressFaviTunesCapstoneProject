@@ -42,7 +42,7 @@ const FavSearch = () => {
           term: searchTerm,
           media: media,
           entity: entity,
-          limit: 7,
+          limit: 10,
         },
       });
       setSearchResults(response.data.results);
@@ -76,13 +76,15 @@ const FavSearch = () => {
     <div>
       <h1>Fav Media Search</h1>
       <h2>Add your fav media to your fav list!</h2>
-      <input
-        type="text"
-        value={searchTerm}
-        onChange={handleSearchTermChange}
-        placeholder="Search for something"
-        className="form-control"
-      />
+      <div className="form-group col-sm-12 col-md-6">
+        <input
+          type="text"
+          value={searchTerm}
+          onChange={handleSearchTermChange}
+          placeholder="Search for something"
+          className="form-control"
+        />
+      </div>
       <DropdownSelect
         options={mediaOptions}
         value={media}
