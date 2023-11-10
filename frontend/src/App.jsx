@@ -8,7 +8,8 @@ import Login from "./components/users/Login";
 import NavbarSitewide from "./components/sitewide/NavbarSitewide";
 import PageNotFound from "./components/PageNotFound";
 import Register from "./components/users/Register";
-import ApiTest from "./components/APITest";
+import MusicSearch from "./components/music/MusicSearch";
+import BookSearch from "./components/books/BookSearch";
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
       <NavbarSitewide />
       <main>
         <Routes>
-          <Route path="/test" element={<ApiTest />} />
           <Route exact path="/" element={<Home />} />
+          <Route path="/book-search" element={<BookSearch />} />
+          <Route path="/music-search" element={<MusicSearch />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route path="/*" element={<PageNotFound />} />

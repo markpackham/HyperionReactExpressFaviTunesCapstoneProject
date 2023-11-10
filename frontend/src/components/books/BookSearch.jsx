@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-const ApiTest = () => {
+const BookSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
 
@@ -10,8 +10,8 @@ const ApiTest = () => {
       const response = await axios.get("https://itunes.apple.com/search", {
         params: {
           term: searchTerm,
-          media: "music",
-          entity: "song",
+          media: "ebook",
+          entity: "ebook",
           limit: 10,
         },
       });
@@ -30,7 +30,7 @@ const ApiTest = () => {
         type="text"
         value={searchTerm}
         onChange={handleSearchTermChange}
-        placeholder="Search for a song"
+        placeholder="Search for a book"
       />
       <ul>
         {searchResults.map((result) => (
@@ -45,4 +45,4 @@ const ApiTest = () => {
   );
 };
 
-export default ApiTest;
+export default BookSearch;
