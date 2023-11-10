@@ -12,6 +12,7 @@ const FavSearch = () => {
   const [media, setMedia] = useState("ebook");
   const [entity, setEntity] = useState("ebook");
 
+  // Select ebook, movie or music via DropdownSelect component
   const mediaOptions = [
     { value: "ebook", label: "Ebook" },
     { value: "music", label: "Music" },
@@ -20,10 +21,7 @@ const FavSearch = () => {
 
   const entityOptions = {
     ebook: [{ value: "ebook", label: "Ebook" }],
-    music: [
-      { value: "musicTrack", label: "Music Track" },
-      { value: "album", label: "Album" },
-    ],
+    music: [{ value: "musicTrack", label: "Music Track" }],
     movie: [{ value: "movie", label: "Movie" }],
   };
 
@@ -51,7 +49,7 @@ const FavSearch = () => {
     setItems([...items, item]);
   };
 
-  const handleRemoveItem = (item) => {
+  const handleRemoveItem = () => {
     setItems(items.filter((it) => it.trackId !== it.trackId));
   };
 

@@ -40,7 +40,7 @@ const DropdownSelect = ({ options, value, onChange }) => {
 };
 
 DropdownSelect.propTypes = {
-  options: PropTypes.object.isRequired,
+  options: PropTypes.array.isRequired,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
 };
