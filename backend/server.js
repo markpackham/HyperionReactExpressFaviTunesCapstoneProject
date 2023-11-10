@@ -13,6 +13,7 @@ const cors = require("cors");
 const getTodos = require("./routes/secure/getTodos");
 const login = require("./routes/login");
 const register = require("./routes/register");
+const getAlbumInfo = require("./routes/getAlbumInfo");
 
 // Initialize middleware
 const app = express();
@@ -48,6 +49,7 @@ app.use(express.json());
 app.use("/favs/secure", getTodos);
 app.use("/favs", login);
 app.use("/favs", register);
+app.use("/favs", getAlbumInfo);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
