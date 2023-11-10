@@ -22,12 +22,12 @@ const NavbarSitewide = () => {
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/search">
-                Search <i className="fa-solid fa-book"></i>
+                Media Search <i className="fa-solid fa-book"></i>
               </Link>
             </li>
             <li className="nav-item">
               <Link className="nav-link" to="/search-album">
-                Album Info <i className="fa-solid fa-album"></i>
+                Album Info <i className="fa-solid fa-record-vinyl"></i>
               </Link>
             </li>
             <li className="nav-item">

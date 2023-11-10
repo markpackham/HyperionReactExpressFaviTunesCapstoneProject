@@ -4,6 +4,7 @@ import DOMPurify from "dompurify";
 import AddFav from "./AddFav";
 import RemoveFav from "./RemoveFav";
 import DropdownSelect from "./DropdownSelect";
+import { iTunesUrlPath } from "../../global";
 
 const FavSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -27,7 +28,7 @@ const FavSearch = () => {
 
   useEffect(() => {
     const fetchSearchResults = async () => {
-      const response = await axios.get("https://itunes.apple.com/search", {
+      const response = await axios.get(iTunesUrlPath, {
         params: {
           term: searchTerm,
           media: media,
@@ -64,7 +65,7 @@ const FavSearch = () => {
 
   return (
     <div>
-      <h1>Fav Media</h1>
+      <h1>Fav Media Search</h1>
       <h2>Add your fav media to your fav list!</h2>
       <input
         type="text"
