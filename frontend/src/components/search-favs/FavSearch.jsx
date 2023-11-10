@@ -3,44 +3,7 @@ import axios from "axios";
 import DOMPurify from "dompurify";
 import AddFav from "./AddFav";
 import RemoveFav from "./RemoveFav";
-
-const Dropdown = ({ options, value, onChange }) => {
-  const [show, setShow] = useState(false);
-
-  const handleToggle = () => {
-    setShow(!show);
-  };
-
-  const handleChange = (event) => {
-    onChange(event.target.value);
-    setShow(false);
-  };
-
-  return (
-    <div className="dropdown">
-      <button className="dropdown-button" onClick={handleToggle}>
-        {value}
-      </button>
-      {show && (
-        <ul className="dropdown-list">
-          {options.map((option) => (
-            <li key={option.value}>
-              <input
-                type="radio"
-                id={option.value}
-                name="dropdown"
-                value={option.value}
-                checked={value === option.value}
-                onChange={handleChange}
-              />
-              <label htmlFor={option.value}>{option.label}</label>
-            </li>
-          ))}
-        </ul>
-      )}
-    </div>
-  );
-};
+import DropdownSelect from "./DropdownSelect";
 
 const FavSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -56,20 +19,12 @@ const FavSearch = () => {
   ];
 
   const entityOptions = {
-    ebook: [
-      { value: "ebook", label: "Ebook" },
-      { value: "audiobook", label: "Audiobook" },
-    ],
+    ebook: [{ value: "ebook", label: "Ebook" }],
     music: [
       { value: "musicTrack", label: "Music Track" },
       { value: "album", label: "Album" },
-      { value: "musicVideo", label: "Music Video" },
     ],
-    movie: [
-      { value: "movie", label: "Movie" },
-      { value: "feature-movie", label: "Feature Movie" },
-      { value: "movieArtist", label: "Movie Artist" },
-    ],
+    movie: [{ value: "movie", label: "Movie" }],
   };
 
   useEffect(() => {
@@ -119,12 +74,12 @@ const FavSearch = () => {
         onChange={handleSearchTermChange}
         placeholder="Search for something"
       />
-      <Dropdown
+      <DropdownSelect
         options={mediaOptions}
         value={media}
         onChange={handleMediaChange}
       />
-      <Dropdown
+      <DropdownSelect
         options={entityOptions[media]}
         value={entity}
         onChange={handleEntityChange}
@@ -144,19 +99,6 @@ const FavSearch = () => {
         </div>
         <div className="col-sm-12 col-md-6 item-list">
           <h3>Your fav list</h3>
-          <ul>
-            {items.map((item) => (
-              <li key={item.trackId}>
-                <a href={item.trackViewUrl} target="_blank" rel="noreferrer">
-                  {item.trackName} by {item.artistName}
-                </a>
-                <RemoveFav item={item} onRemove={handleRemoveItem} />
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="col-sm-12 col-md-6 fav-items">
-          <h3>Fav Media</h3>
           <ul>
             {items.map((item) => (
               <li key={item.trackId}>
