@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 const DropdownSelect = ({ options, value, onChange }) => {
   const [show, setShow] = useState(false);
@@ -36,6 +37,12 @@ const DropdownSelect = ({ options, value, onChange }) => {
       )}
     </div>
   );
+};
+
+DropdownSelect.propTypes = {
+  options: PropTypes.object.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
 
 export default DropdownSelect;
