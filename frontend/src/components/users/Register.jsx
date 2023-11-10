@@ -42,7 +42,7 @@ const Register = () => {
       // Send Post to Express
       axios({
         method: "POST",
-        url: `${urlPath}/register`,
+        url: `${urlPath}register`,
         headers: {
           "Content-Type": "application/json",
         },
@@ -50,7 +50,6 @@ const Register = () => {
       })
         .then((res) => {
           if (res.status === 200) {
-            // Registration successful, redirect to login
             Swal.fire({
               title: `You're registered`,
               icon: "success",
@@ -59,16 +58,14 @@ const Register = () => {
           } else {
             Swal.fire({
               title: "Registration Failed",
-              text: res.data.message,
               icon: "error",
             });
           }
         })
-        .catch((error) => {
-          console.error("Registration error:", error);
+        .catch((res) => {
           Swal.fire({
             title: "Registration Error",
-            text: "Sorry username has already been taken!",
+            text: res.response.data.message,
             icon: "error",
           });
         });

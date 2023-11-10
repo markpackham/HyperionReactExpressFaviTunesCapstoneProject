@@ -22,7 +22,7 @@ exports.login = (req, res) => {
         algorithm: "HS256",
       });
       res.send({
-        message: `Welcome back ${username} please add some todos!`,
+        message: `Welcome back ${username} please add some favs!`,
         token: token,
       });
     })

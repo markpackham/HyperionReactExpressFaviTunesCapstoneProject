@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -38,13 +37,13 @@ const Login = () => {
               icon: "success",
             });
 
+            // Set user up with their token
             setToken[res.data.token];
             sessionStorage.setItem("jwt_token", res.data.token);
           } else {
-            console.error("Login failed:", res.statusText);
             Swal.fire({
               title: "Login Failed",
-              text: res.statusText,
+              text: res.data,
               icon: "error",
             });
           }
