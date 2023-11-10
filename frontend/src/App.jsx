@@ -9,6 +9,7 @@ import NavbarSitewide from "./components/sitewide/NavbarSitewide";
 import PageNotFound from "./components/PageNotFound";
 import Register from "./components/users/Register";
 import FavSearch from "./components/search-favs/FavSearch";
+import AlbumSearch from "./components/search-album/AlbumSearch";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/search" element={<FavSearch />} />
+          <Route path="/search-album" element={<AlbumSearch />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route path="/*" element={<PageNotFound />} />

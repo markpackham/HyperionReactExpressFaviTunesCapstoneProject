@@ -26,6 +26,11 @@ const NavbarSitewide = () => {
               </Link>
             </li>
             <li className="nav-item">
+              <Link className="nav-link" to="/search-album">
+                Album Info <i className="fa-solid fa-album"></i>
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link" to="/login">
                 Login <i className="fa-solid fa-right-to-bracket" />
               </Link>
