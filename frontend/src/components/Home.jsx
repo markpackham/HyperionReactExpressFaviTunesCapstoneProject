@@ -9,6 +9,10 @@ const Home = () => {
         <Link to="/register">registered</Link> and then{" "}
         <Link to="/login">login</Link> to use this site.
       </p>
+      <p>
+        This is a community project where registered users can add all their
+        favorite music and books in lists.
+      </p>
     </div>
   );
 };
