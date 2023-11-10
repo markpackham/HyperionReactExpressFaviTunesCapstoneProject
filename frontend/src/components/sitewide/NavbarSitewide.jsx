@@ -11,13 +11,13 @@ const NavbarSitewide = () => {
   };
 
   return (
-    <>
+    <div id="nav-section" className="sticky-top mt-2">
       <nav className="navbar navbar-expand-lg mb-3 rounded">
         <div className="container">
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link className="nav-link" to="/">
-                Home <i className="fa-solid fa-house" />
+                Home /About <i className="fa-solid fa-house" />
               </Link>
             </li>
             <li className="nav-item">
@@ -51,7 +51,7 @@ const NavbarSitewide = () => {
         </div>
       </nav>
       <hr />
-    </>
+    </div>
   );
 };
 

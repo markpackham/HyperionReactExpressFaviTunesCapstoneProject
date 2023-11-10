@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import DOMPurify from "dompurify";
 
 const MusicSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -21,7 +22,7 @@ const MusicSearch = () => {
   }, [searchTerm]);
 
   const handleSearchTermChange = (event) => {
-    setSearchTerm(event.target.value);
+    setSearchTerm(DOMPurify.sanitize(event.target.value));
   };
 
   return (

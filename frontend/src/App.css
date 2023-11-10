@@ -52,9 +52,13 @@ nav ul li {
 }
 
 nav ul li a {
-  font-size: 1.3rem !important;
+  font-size: 1.2rem !important;
 }
 
 nav ul li a:hover {
   font-weight: bold;
+}
+
+#nav-section {
+  background-color: var(--card-bg-color);
 }

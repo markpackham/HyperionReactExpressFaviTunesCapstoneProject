@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import DOMPurify from "dompurify";
 
 const BookSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -22,7 +23,8 @@ const BookSearch = () => {
   }, [searchTerm]);
 
   const handleSearchTermChange = (event) => {
-    setSearchTerm(event.target.value);
+    // Use DOMPurify to prevent script injections
+    setSearchTerm(DOMPurify.sanitize(event.target.value));
   };
 
   const handleAddBook = (book) => {
@@ -49,7 +51,12 @@ const BookSearch = () => {
             <a href={result.trackViewUrl} target="_blank" rel="noreferrer">
               {result.trackName} by {result.artistName}
             </a>
-            <button onClick={() => handleAddBook(result)}>Add</button>
+            <button
+              className="btn btn-primary"
+              onClick={() => handleAddBook(result)}
+            >
+              Add
+            </button>
           </li>
         ))}
       </ul>
@@ -60,7 +67,12 @@ const BookSearch = () => {
             <a href={book.trackViewUrl} target="_blank" rel="noreferrer">
               {book.trackName} by {book.artistName}
             </a>
-            <button onClick={() => handleRemoveBook(book)}>Remove</button>
+            <button
+              className="btn btn-danger"
+              onClick={() => handleRemoveBook(book)}
+            >
+              Remove
+            </button>
           </li>
         ))}
       </ul>
