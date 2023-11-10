@@ -15,7 +15,10 @@ const DropdownSelect = ({ options, value, onChange }) => {
 
   return (
     <div className="dropdown">
-      <button className="dropdown-button" onClick={handleToggle}>
+      <button
+        className="btn btn-secondary dropdown-button"
+        onClick={handleToggle}
+      >
         {value}
       </button>
       {show && (

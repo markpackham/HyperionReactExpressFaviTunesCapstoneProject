@@ -21,9 +21,18 @@ const FavSearch = () => {
   ];
 
   const entityOptions = {
-    ebook: [{ value: "ebook", label: "Ebook" }],
-    music: [{ value: "musicTrack", label: "Music Track" }],
-    movie: [{ value: "movie", label: "Movie" }],
+    ebook: [
+      { value: "ebook", label: "Ebook" },
+      { value: "audiobook", label: "Audiobook" },
+    ],
+    music: [
+      { value: "musicTrack", label: "Music Track" },
+      { value: "musicVideo", label: "Music Video" },
+    ],
+    movie: [
+      { value: "movie", label: "Movie" },
+      { value: "movieArtist", label: "Movie Artist" },
+    ],
   };
 
   useEffect(() => {
@@ -72,6 +81,7 @@ const FavSearch = () => {
         value={searchTerm}
         onChange={handleSearchTermChange}
         placeholder="Search for something"
+        className="form-control"
       />
       <DropdownSelect
         options={mediaOptions}
