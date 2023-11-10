@@ -8,6 +8,7 @@ import Login from "./components/users/Login";
 import NavbarSitewide from "./components/sitewide/NavbarSitewide";
 import PageNotFound from "./components/PageNotFound";
 import Register from "./components/users/Register";
+import ApiTest from "./components/APITest";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <NavbarSitewide />
       <main>
         <Routes>
+          <Route path="/test" element={<ApiTest />} />
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
