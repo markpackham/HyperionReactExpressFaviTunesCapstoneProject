@@ -26,6 +26,8 @@ const MusicSearch = () => {
 
   return (
     <div>
+      <h1>Music</h1>
+      <h2>Add your fav music to your fav list!</h2>
       <input
         type="text"
         value={searchTerm}
