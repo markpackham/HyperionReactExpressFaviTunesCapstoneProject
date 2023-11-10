@@ -1,7 +1,11 @@
 const axios = require("axios");
 
 exports.albumInfo = async (req, res) => {
-  const { albumName, artistName } = req.query;
+  console.log(req.body);
+  const { albumName, artistName } = req.body;
+  console.log(albumName);
+  console.log(artistName);
+
   const url = `https://itunes.apple.com/search?term=${albumName}+${artistName}&entity=album`;
   try {
     const response = await axios.get(url);
