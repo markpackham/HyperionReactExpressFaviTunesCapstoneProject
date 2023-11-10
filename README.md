@@ -1,4 +1,4 @@
-# iTunes and Apple Books Search App
+# iTunes & Apple Books Search App
 
 It includes the following:
 

@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const NavbarSitewide = () => {
   const navigate = useNavigate();
   const token_storage = sessionStorage.getItem("jwt_token");
 
@@ -12,7 +12,6 @@ const Navbar = () => {
 
   return (
     <>
-      <h1>Todos</h1>
       <nav className="navbar navbar-expand-lg mb-3 rounded">
         <div className="container">
           <ul className="navbar-nav">
@@ -46,4 +45,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarSitewide;
