@@ -57,7 +57,7 @@ const Register = () => {
             });
             navigate("/login");
           } else {
-            +Swal.fire({
+            Swal.fire({
               title: "Registration Failed",
               text: res.data.message,
               icon: "error",
@@ -68,7 +68,7 @@ const Register = () => {
           console.error("Registration error:", error);
           Swal.fire({
             title: "Registration Error",
-            text: error.message,
+            text: "Sorry username has already been taken!",
             icon: "error",
           });
         });
