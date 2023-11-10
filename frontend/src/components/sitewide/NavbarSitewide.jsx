@@ -21,13 +21,8 @@ const NavbarSitewide = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/book-search">
-                Book Search <i className="fa-solid fa-book"></i>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/music-search">
-                Music Search <i className="fa-solid fa-music"></i>
+              <Link className="nav-link" to="/search">
+                Search <i className="fa-solid fa-book"></i>
               </Link>
             </li>
             <li className="nav-item">

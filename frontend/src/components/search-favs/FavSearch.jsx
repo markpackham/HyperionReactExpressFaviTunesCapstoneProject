@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import DOMPurify from "dompurify";
-import AddBook from "./AddBook";
-import RemoveBook from "./RemoveBook";
+import AddFav from "./AddFav";
+import RemoveFav from "./RemoveFav";
 
 const BookSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [books, setBooks] = useState([]);
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
     const fetchSearchResults = async () => {
@@ -29,46 +29,46 @@ const BookSearch = () => {
     setSearchTerm(DOMPurify.sanitize(event.target.value));
   };
 
-  const handleAddBook = (book) => {
-    setBooks([...books, book]);
+  const handleAddItem = (item) => {
+    setItems([...items, item]);
   };
 
-  const handleRemoveBook = (book) => {
-    setBooks(books.filter((b) => b.trackId !== book.trackId));
+  const handleRemoveItem = (item) => {
+    setItems(items.filter((it) => it.trackId !== it.trackId));
   };
 
   return (
     <div>
-      <h1>Books</h1>
-      <h2>Add your fav books to your fav list!</h2>
+      <h1>Fav Media</h1>
+      <h2>Add your fav media to your fav list!</h2>
       <input
         type="text"
         value={searchTerm}
         onChange={handleSearchTermChange}
-        placeholder="Search for a book"
+        placeholder="Search for something"
       />
       <div className="row">
-        <div className="col-sm-12 col-md-6 book-search">
+        <div className="col-sm-12 col-md-6 item-search">
           <ul>
             {searchResults.map((result) => (
               <li key={result.trackId}>
                 <a href={result.trackViewUrl} target="_blank" rel="noreferrer">
                   {result.trackName} by {result.artistName}
                 </a>
-                <AddBook book={result} onAdd={handleAddBook} />
+                <AddFav item={result} onAdd={handleAddItem} />
               </li>
             ))}
           </ul>
         </div>
-        <div className="col-sm-12 col-md-6 fav-books">
-          <h3>Fav Books</h3>
+        <div className="col-sm-12 col-md-6 fav-items">
+          <h3>Fav Media</h3>
           <ul>
-            {books.map((book) => (
-              <li key={book.trackId}>
-                <a href={book.trackViewUrl} target="_blank" rel="noreferrer">
-                  {book.trackName} by {book.artistName}
+            {items.map((item) => (
+              <li key={item.trackId}>
+                <a href={item.trackViewUrl} target="_blank" rel="noreferrer">
+                  {item.trackName} by {item.artistName}
                 </a>
-                <RemoveBook book={book} onRemove={handleRemoveBook} />
+                <RemoveFav item={item} onRemove={handleRemoveItem} />
               </li>
             ))}
           </ul>

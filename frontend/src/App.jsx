@@ -8,8 +8,7 @@ import Login from "./components/users/Login";
 import NavbarSitewide from "./components/sitewide/NavbarSitewide";
 import PageNotFound from "./components/PageNotFound";
 import Register from "./components/users/Register";
-import MusicSearch from "./components/music/MusicSearch";
-import BookSearch from "./components/books/BookSearch";
+import FavSearch from "./components/search-favs/FavSearch";
 
 function App() {
   return (
@@ -19,8 +18,7 @@ function App() {
       <main>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route path="/book-search" element={<BookSearch />} />
-          <Route path="/music-search" element={<MusicSearch />} />
+          <Route path="/search" element={<FavSearch />} />
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/register" element={<Register />} />
           <Route path="/*" element={<PageNotFound />} />
