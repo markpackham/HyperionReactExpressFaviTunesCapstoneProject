@@ -23,7 +23,7 @@ const BookSearch = () => {
   }, [searchTerm]);
 
   const handleSearchTermChange = (event) => {
-    // Use DOMPurify to prevent script injections
+    // Prevent script injections
     setSearchTerm(DOMPurify.sanitize(event.target.value));
   };
 
@@ -45,37 +45,43 @@ const BookSearch = () => {
         onChange={handleSearchTermChange}
         placeholder="Search for a book"
       />
-      <ul>
-        {searchResults.map((result) => (
-          <li key={result.trackId}>
-            <a href={result.trackViewUrl} target="_blank" rel="noreferrer">
-              {result.trackName} by {result.artistName}
-            </a>
-            <button
-              className="btn btn-primary"
-              onClick={() => handleAddBook(result)}
-            >
-              Add
-            </button>
-          </li>
-        ))}
-      </ul>
-      <h3>Fav Books</h3>
-      <ul>
-        {books.map((book) => (
-          <li key={book.trackId}>
-            <a href={book.trackViewUrl} target="_blank" rel="noreferrer">
-              {book.trackName} by {book.artistName}
-            </a>
-            <button
-              className="btn btn-danger"
-              onClick={() => handleRemoveBook(book)}
-            >
-              Remove
-            </button>
-          </li>
-        ))}
-      </ul>
+      <div className="row">
+        <div className="col-sm-12 col-md-6 book-search">
+          <ul>
+            {searchResults.map((result) => (
+              <li key={result.trackId}>
+                <a href={result.trackViewUrl} target="_blank" rel="noreferrer">
+                  {result.trackName} by {result.artistName}
+                </a>
+                <button
+                  className="btn btn-primary"
+                  onClick={() => handleAddBook(result)}
+                >
+                  Add
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="col-sm-12 col-md-6 fav-books">
+          <h3>Fav Books</h3>
+          <ul>
+            {books.map((book) => (
+              <li key={book.trackId}>
+                <a href={book.trackViewUrl} target="_blank" rel="noreferrer">
+                  {book.trackName} by {book.artistName}
+                </a>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => handleRemoveBook(book)}
+                >
+                  Remove
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

@@ -11,8 +11,8 @@ const NavbarSitewide = () => {
   };
 
   return (
-    <div id="nav-section" className="sticky-top mt-2">
-      <nav className="navbar navbar-expand-lg mb-3 rounded">
+    <div id="nav-section" className="sticky-top mt-1">
+      <nav className="navbar navbar-expand-lg mb-1 rounded">
         <div className="container">
           <ul className="navbar-nav">
             <li className="nav-item">

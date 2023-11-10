@@ -27,6 +27,12 @@ button:hover {
   font-weight: bold;
 }
 
+footer {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+}
+
 h1,
 h2,
 h3,
@@ -48,11 +54,11 @@ ul {
 }
 
 nav ul li {
-  margin: 1.2rem;
+  margin: 1rem;
 }
 
 nav ul li a {
-  font-size: 1.2rem !important;
+  font-size: 1.1rem !important;
 }
 
 nav ul li a:hover {
@@ -61,4 +67,12 @@ nav ul li a:hover {
 
 #nav-section {
   background-color: var(--card-bg-color);
+}
+
+
+/* Media Queries */
+@media screen and (max-width: 991px) {
+  nav ul {
+    margin: auto;
+  }
 }
