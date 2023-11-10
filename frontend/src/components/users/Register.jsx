@@ -57,10 +57,9 @@ const Register = () => {
             });
             navigate("/login");
           } else {
-            console.error("Registration failed:", res.statusText);
-            Swal.fire({
+            +Swal.fire({
               title: "Registration Failed",
-              text: res.statusText,
+              text: res.data.message,
               icon: "error",
             });
           }
