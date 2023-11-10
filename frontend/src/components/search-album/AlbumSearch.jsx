@@ -7,6 +7,7 @@ import { albumUrlPath } from "../../global";
 
 const AlbumSearch = () => {
   //url example `http://localhost:8080/favs/album-info?albumName=Greatest+Hits&artistName=Creed`;
+  // First test with single words - Album "War" and artist "U2";
 
   const formik = useFormik({
     initialValues: {
@@ -20,13 +21,13 @@ const AlbumSearch = () => {
     onSubmit: () => {
       axios
         .post(`${albumUrlPath}`, {
-          albumName: DOMPurify.sanitize(formik.values.username),
-          artistName: DOMPurify.sanitize(formik.values.password),
+          albumName: DOMPurify.sanitize(formik.values.albumName),
+          artistName: DOMPurify.sanitize(formik.values.artistName),
         })
         .then((res) => {
           if (res.status === 200) {
             Swal.fire({
-              title: res.data.message,
+              title: res.data,
               icon: "success",
             });
           } else {
