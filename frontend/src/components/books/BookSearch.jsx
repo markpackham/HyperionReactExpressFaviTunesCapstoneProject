@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import DOMPurify from "dompurify";
+import AddBook from "./AddBook";
+import RemoveBook from "./RemoveBook";
 
 const BookSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -53,12 +55,7 @@ const BookSearch = () => {
                 <a href={result.trackViewUrl} target="_blank" rel="noreferrer">
                   {result.trackName} by {result.artistName}
                 </a>
-                <button
-                  className="btn btn-primary"
-                  onClick={() => handleAddBook(result)}
-                >
-                  Add
-                </button>
+                <AddBook book={result} onAdd={handleAddBook} />
               </li>
             ))}
           </ul>
@@ -71,12 +68,7 @@ const BookSearch = () => {
                 <a href={book.trackViewUrl} target="_blank" rel="noreferrer">
                   {book.trackName} by {book.artistName}
                 </a>
-                <button
-                  className="btn btn-danger"
-                  onClick={() => handleRemoveBook(book)}
-                >
-                  Remove
-                </button>
+                <RemoveBook book={book} onRemove={handleRemoveBook} />
               </li>
             ))}
           </ul>
