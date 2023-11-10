@@ -7,6 +7,7 @@ const jwt_key = process.env.JWT_KEY;
 // LOGIN
 exports.login = (req, res) => {
   const { username, password } = req.body;
+  console.log(username);
 
   // See if user exists in DB if so send a jwt
   User.findOne({ username: username, password: password })
