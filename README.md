@@ -60,3 +60,11 @@ Password must contain at least 8 characters, 1 uppercase, 1 lowercase, 1 number 
 A jwt token gets store in the MongoDB Database.
 
 2) Use the same username and password to login in the Login page.
+
+3) You can now add your favorite media to lists or delete them from those lists in the Media Search section.
+The data is fetched from iTunes' API as you search it.
+
+4) If you do not want to bother logging in you can search for albums and get more info on them in the Album Info section.
+
+You just need to enter an album name and album artist then a request is sent to the Express server which makes the request to the 
+iTunes API which then gets sent back from Express to the React App.
