@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import DOMPurify from "dompurify";
 import AddFav from "./AddFav";
@@ -12,6 +13,9 @@ const FavSearch = () => {
   const [items, setItems] = useState([]);
   const [media, setMedia] = useState("ebook");
   const [entity, setEntity] = useState("ebook");
+
+  // Grab session storage, will be empty for logged out users
+  const token_storage = sessionStorage.getItem("jwt_token");
 
   // Select ebook, movie or music via DropdownSelect component
   const mediaOptions = [
@@ -77,7 +81,14 @@ const FavSearch = () => {
   return (
     <div>
       <h1>Fav Media Search</h1>
-      <h2>Add your fav media to your fav list!</h2>
+
+      {!token_storage && (
+        <h3>
+          Please <Link to="/login">login</Link> to add your fav media to your
+          fav list!
+        </h3>
+      )}
+
       <div className="form-group col-sm-12 col-md-6">
         <input
           type="text"
@@ -111,7 +122,9 @@ const FavSearch = () => {
                 <a href={result.trackViewUrl} target="_blank" rel="noreferrer">
                   {result.trackName} by {result.artistName}
                 </a>
-                <AddFav item={result} onAdd={handleAddItem} />
+                {token_storage && (
+                  <AddFav item={result} onAdd={handleAddItem} />
+                )}
               </li>
             ))}
           </ul>
@@ -124,9 +137,11 @@ const FavSearch = () => {
                 <a href={item.trackViewUrl} target="_blank" rel="noreferrer">
                   {item.trackName} by {item.artistName}
                 </a>
-                <p>Kind: {item.kind}</p>
+                <p>Media Kind: {item.kind}</p>
                 <p>{item.description}</p>
-                <RemoveFav item={item} onRemove={handleRemoveItem} />
+                {token_storage && (
+                  <RemoveFav item={item} onRemove={handleRemoveItem} />
+                )}
               </li>
             ))}
           </ul>
