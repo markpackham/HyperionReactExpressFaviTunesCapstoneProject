@@ -1,14 +1,16 @@
 import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 import * as Yup from "yup";
 import axios from "axios";
 import DOMPurify from "dompurify";
 import Swal from "sweetalert2";
 import { urlPath } from "../../global";
-import { useState } from "react";
 
 const Login = () => {
   const token_storage = sessionStorage.getItem("jwt_token");
   const [token, setToken] = useState("");
+  const navigate = useNavigate();
 
   const formik = useFormik({
     initialValues: {
@@ -41,6 +43,8 @@ const Login = () => {
             // Set user up with their token
             setToken[res.data.token];
             sessionStorage.setItem("jwt_token", res.data.token);
+
+            navigate("/search");
           } else {
             Swal.fire({
               title: "Login Failed",
