@@ -30,11 +30,13 @@ const NavbarSitewide = () => {
                 Album Info <i className="fa-solid fa-record-vinyl"></i>
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/login">
-                Login <i className="fa-solid fa-right-to-bracket" />
-              </Link>
-            </li>
+            {!token_storage && (
+              <li className="nav-item">
+                <Link className="nav-link" to="/login">
+                  Login <i className="fa-solid fa-right-to-bracket" />
+                </Link>
+              </li>
+            )}
             <li className="nav-item">
               <Link className="nav-link" to="/register">
                 Register <i className="fa-solid fa-registered" />
