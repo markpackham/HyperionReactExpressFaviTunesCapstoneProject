@@ -4,8 +4,11 @@ import axios from "axios";
 import DOMPurify from "dompurify";
 import Swal from "sweetalert2";
 import { albumUrlPath } from "../../global";
+import { useState } from "react";
 
 const AlbumSearch = () => {
+  const [albums, setAlbums] = useState([]);
+
   //url example `http://localhost:8080/favs/album-info?albumName=Greatest+Hits&artistName=Creed`;
   // First test with single words - Album "War" and artist "U2";
 
@@ -26,10 +29,8 @@ const AlbumSearch = () => {
         })
         .then((res) => {
           if (res.status === 200) {
-            Swal.fire({
-              title: res.data,
-              icon: "success",
-            });
+            console.log(res.data);
+            setAlbums(res.data);
           } else {
             Swal.fire({
               title: "Search Failed",
@@ -52,24 +53,14 @@ const AlbumSearch = () => {
   return (
     <div>
       <h1>Album Info Search</h1>
+      <p>
+        An example artist name:<strong>U2</strong> album name:
+        <strong>War</strong>.
+      </p>
       <form
         onSubmit={formik.handleSubmit}
         className="form-group col-sm-12 col-md-6"
       >
-        <label htmlFor="albumName">Album Name:</label>
-        <input
-          id="albumName"
-          type="text"
-          className="form-control"
-          {...formik.getFieldProps("albumName")}
-        />
-
-        {formik.touched.albumName && formik.errors.albumName ? (
-          <div className="fw-bold text-danger mb-1">
-            {formik.errors.albumName}
-          </div>
-        ) : null}
-
         <label htmlFor="artistName">Artist Name:</label>
         <input
           id="artistName"
@@ -84,10 +75,40 @@ const AlbumSearch = () => {
           </div>
         ) : null}
 
+        <label htmlFor="albumName">Album Name:</label>
+        <input
+          id="albumName"
+          type="text"
+          className="form-control"
+          {...formik.getFieldProps("albumName")}
+        />
+
+        {formik.touched.albumName && formik.errors.albumName ? (
+          <div className="fw-bold text-danger mb-1">
+            {formik.errors.albumName}
+          </div>
+        ) : null}
+
         <button type="submit" className="btn btn-success">
           Search
         </button>
       </form>
+
+      <div className="row">
+        <div className="col-sm-12 col-md-6 item-search">
+          <ul>
+            {albums.map((album) => (
+              <li key={album.releaseDate}>
+                <a href={album.trackViewUrl} target="_blank" rel="noreferrer">
+                  {album.albumName} by {album.artistName} released on{" "}
+                  {album.releaseDate.substring(0, 10)}
+                  <img src={album.albumCoverImage} alt={album.albumName} />
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 };

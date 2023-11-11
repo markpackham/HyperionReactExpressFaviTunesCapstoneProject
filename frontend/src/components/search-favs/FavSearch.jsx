@@ -37,7 +37,7 @@ const FavSearch = () => {
 
   useEffect(() => {
     const fetchSearchResults = async () => {
-      const response = await axios.get(iTunesUrlPath, {
+      const res = await axios.get(iTunesUrlPath, {
         params: {
           term: searchTerm,
           media: media,
@@ -45,7 +45,7 @@ const FavSearch = () => {
           limit: 10,
         },
       });
-      setSearchResults(response.data.results);
+      setSearchResults(res.data.results);
     };
     fetchSearchResults();
   }, [searchTerm, media, entity]);
