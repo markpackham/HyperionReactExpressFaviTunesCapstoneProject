@@ -99,11 +99,9 @@ const AlbumSearch = () => {
           <ul>
             {albums.map((album) => (
               <li key={album.releaseDate}>
-                <a href={album.trackViewUrl} target="_blank" rel="noreferrer">
-                  {album.albumName} by {album.artistName} released on{" "}
-                  {album.releaseDate.substring(0, 10)}
-                  <img src={album.albumCoverImage} alt={album.albumName} />
-                </a>
+                {album.albumName} by {album.artistName} released on{" "}
+                {album.releaseDate.substring(0, 10)}
+                <img src={album.albumCoverImage} alt={album.albumName} />
               </li>
             ))}
           </ul>

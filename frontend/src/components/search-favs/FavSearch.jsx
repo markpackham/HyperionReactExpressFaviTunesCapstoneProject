@@ -15,7 +15,7 @@ const FavSearch = () => {
 
   // Select ebook, movie or music via DropdownSelect component
   const mediaOptions = [
-    { value: "ebook", label: "Ebook" },
+    { value: "ebook", label: "Book" },
     { value: "music", label: "Music" },
     { value: "movie", label: "Movie" },
   ];
@@ -60,7 +60,7 @@ const FavSearch = () => {
   };
 
   const handleRemoveItem = () => {
-    setItems(items.filter((it) => it.trackId !== it.trackId));
+    setItems(items.filter((item) => item.trackId !== item.trackId));
   };
 
   const handleMediaChange = (value) => {
@@ -85,11 +85,17 @@ const FavSearch = () => {
           className="form-control"
         />
       </div>
+      <p className="mt-2">
+        <strong>Item Category</strong>
+      </p>
       <DropdownSelect
         options={mediaOptions}
         value={media}
         onChange={handleMediaChange}
       />
+      <p className="mt-2">
+        <strong>Sub Category</strong> (eg Music Track or Music Video)
+      </p>
       <DropdownSelect
         options={entityOptions[media]}
         value={entity}
