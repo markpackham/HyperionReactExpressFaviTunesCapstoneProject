@@ -12,7 +12,6 @@ const FavSearch = () => {
   const [searchResults, setSearchResults] = useState([]);
   const [items, setItems] = useState([]);
   const [media, setMedia] = useState("ebook");
-  const [entity, setEntity] = useState("ebook");
 
   // Grab session storage, will be empty for logged out users
   const token_storage = sessionStorage.getItem("jwt_token");
@@ -25,28 +24,12 @@ const FavSearch = () => {
     { value: "movie", label: "Movie" },
   ];
 
-  const entityOptions = {
-    ebook: [
-      { value: "ebook", label: "Ebook" },
-      { value: "audiobook", label: "Audiobook" },
-    ],
-    music: [
-      { value: "musicTrack", label: "Music Track" },
-      { value: "musicVideo", label: "Music Video" },
-    ],
-    movie: [
-      { value: "movie", label: "Movie" },
-      { value: "movieArtist", label: "Movie Artist" },
-    ],
-  };
-
   useEffect(() => {
     const fetchSearchResults = async () => {
       const res = await axios.get(iTunesUrlPath, {
         params: {
           term: searchTerm,
           media: media,
-          //entity: entity,
           limit: 10,
         },
       });
@@ -54,7 +37,7 @@ const FavSearch = () => {
       setSearchResults(res.data.results);
     };
     fetchSearchResults();
-  }, [searchTerm, media, entity]);
+  }, [searchTerm, media]);
 
   const handleSearchTermChange = (event) => {
     // Prevent script injections
@@ -65,17 +48,12 @@ const FavSearch = () => {
     setItems([...items, item]);
   };
 
-  const handleRemoveItem = () => {
-    setItems(items.filter((item) => item.trackId !== item.trackId));
+  const handleRemoveItem = (trackIdToRemove) => {
+    setItems(items.filter((item) => item.trackId !== trackIdToRemove));
   };
 
   const handleMediaChange = (value) => {
     setMedia(value);
-    setEntity(entityOptions[value][0].value);
-  };
-
-  const handleEntityChange = (value) => {
-    setEntity(value);
   };
 
   return (
@@ -109,11 +87,6 @@ const FavSearch = () => {
       <p className="mt-2">
         <strong>Sub Category</strong> (eg Music Track or Music Video)
       </p>
-      {/* <DropdownSelect
-        options={entityOptions[media]}
-        value={entity}
-        onChange={handleEntityChange}
-      /> */}
       <div className="row">
         <div className="col-sm-12 col-md-6 item-search">
           <ul>
@@ -139,6 +112,7 @@ const FavSearch = () => {
                 </a>
                 <p>Media Kind: {item.kind}</p>
                 <p>{item.description}</p>
+                <p>Track Id {item.trackId}</p>
                 {token_storage && (
                   <RemoveFav item={item} onRemove={handleRemoveItem} />
                 )}
