@@ -21,9 +21,13 @@ const itemSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  description: {
+  longsDescription: {
     type: String,
     required: false,
+  },
+  releaseDate: {
+    type: String,
+    required: true,
   },
 });
 

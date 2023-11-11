@@ -111,8 +111,8 @@ const FavSearch = () => {
                   {item.trackName} by {item.artistName}
                 </a>
                 <p>Media Kind: {item.kind}</p>
-                <p>{item.description}</p>
-                <p>Track Id {item.trackId}</p>
+                <p>{item.longDescription}</p>
+                <p>Released: {item.releaseDate.substring(0, 10)}</p>
                 {token_storage && (
                   <RemoveFav item={item} onRemove={handleRemoveItem} />
                 )}
