@@ -1,3 +1,7 @@
+API info
+https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/Searching.html#//apple_ref/doc/uid/TP40017632-CH5-SW1
+
+
 Have Get All non secure - anyone can Read all items
 
 Show teaser info and not full info of items.

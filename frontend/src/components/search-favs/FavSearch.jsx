@@ -15,7 +15,8 @@ const FavSearch = () => {
 
   // Select ebook, movie or music via DropdownSelect component
   const mediaOptions = [
-    { value: "ebook", label: "Book" },
+    { value: "all", label: "All" },
+    { value: "ebook", label: "Ebook" },
     { value: "music", label: "Music" },
     { value: "movie", label: "Movie" },
   ];
@@ -41,10 +42,11 @@ const FavSearch = () => {
         params: {
           term: searchTerm,
           media: media,
-          entity: entity,
+          //entity: entity,
           limit: 10,
         },
       });
+      console.log(res.data);
       setSearchResults(res.data.results);
     };
     fetchSearchResults();
@@ -96,11 +98,11 @@ const FavSearch = () => {
       <p className="mt-2">
         <strong>Sub Category</strong> (eg Music Track or Music Video)
       </p>
-      <DropdownSelect
+      {/* <DropdownSelect
         options={entityOptions[media]}
         value={entity}
         onChange={handleEntityChange}
-      />
+      /> */}
       <div className="row">
         <div className="col-sm-12 col-md-6 item-search">
           <ul>
@@ -122,6 +124,7 @@ const FavSearch = () => {
                 <a href={item.trackViewUrl} target="_blank" rel="noreferrer">
                   {item.trackName} by {item.artistName}
                 </a>
+                <p>{item.description}</p>
                 <RemoveFav item={item} onRemove={handleRemoveItem} />
               </li>
             ))}
