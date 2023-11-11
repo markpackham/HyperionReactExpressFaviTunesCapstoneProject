@@ -124,6 +124,7 @@ const FavSearch = () => {
                 <a href={item.trackViewUrl} target="_blank" rel="noreferrer">
                   {item.trackName} by {item.artistName}
                 </a>
+                <p>Kind: {item.kind}</p>
                 <p>{item.description}</p>
                 <RemoveFav item={item} onRemove={handleRemoveItem} />
               </li>
