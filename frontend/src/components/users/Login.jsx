@@ -4,10 +4,14 @@ import { useState } from "react";
 import * as Yup from "yup";
 import axios from "axios";
 import DOMPurify from "dompurify";
+import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
 import { urlPath } from "../../global";
 
+import { setUserName } from "../../store/userSlice";
+
 const Login = () => {
+  const dispatch = useDispatch();
   const token_storage = sessionStorage.getItem("jwt_token");
   const [token, setToken] = useState("");
   const navigate = useNavigate();
@@ -43,7 +47,8 @@ const Login = () => {
             // Set user up with their token
             setToken[res.data.token];
             sessionStorage.setItem("jwt_token", res.data.token);
-
+            // Put username in header
+            dispatch(setUserName(DOMPurify.sanitize(formik.values.username)));
             navigate("/search");
           } else {
             Swal.fire({

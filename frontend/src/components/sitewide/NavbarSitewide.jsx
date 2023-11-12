@@ -1,10 +1,16 @@
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { setUserName } from "../../store/userSlice";
 
 const NavbarSitewide = () => {
   const navigate = useNavigate();
   const token_storage = sessionStorage.getItem("jwt_token");
+  const userName = useSelector((state) => state.userName.userName);
+
+  const dispatch = useDispatch();
 
   const handleLogout = () => {
+    dispatch(setUserName("Currently logged out"));
     // Delete token
     sessionStorage.setItem("jwt_token", "");
     navigate("/login");
@@ -49,6 +55,11 @@ const NavbarSitewide = () => {
                 </a>
               </li>
             )}
+            <li className="nav-item">
+              <span className="nav-link">
+                <strong>Username:</strong> {userName}
+              </span>
+            </li>
           </ul>
         </div>
       </nav>

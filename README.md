@@ -14,6 +14,7 @@ It includes the following:
 - Mongoose to connect to Mongo DB
 - Nodemon to save the dev from having to constantly restart the server after changes
 - React is used for the frontend created via Vite
+- React Redux is used so the username can be seen sitewide in the navbar when a person logs in
 - React Router Dom for site navigation
 - Sweetalert2 for better looking alert messages
 - Yup for form validation checks
