@@ -45,6 +45,12 @@ const FavSearch = () => {
     fetchSearchResults();
   }, [searchTerm, media]);
 
+  const handleSearchTermChange = (event) => {
+    // Prevent script injections
+    setSearchTerm(DOMPurify.sanitize(event.target.value));
+  };
+
+  // Fav List
   const fetchFavResults = async () => {
     const res = await axios.get(`${urlPath}`);
     setItems(res.data);
@@ -53,11 +59,6 @@ const FavSearch = () => {
   useEffect(() => {
     fetchFavResults();
   }, []);
-
-  const handleSearchTermChange = (event) => {
-    // Prevent script injections
-    setSearchTerm(DOMPurify.sanitize(event.target.value));
-  };
 
   const handleAddItem = (item) => {
     // Escape function if item already in list
