@@ -109,7 +109,6 @@ const AlbumSearch = () => {
                     src={album.albumCoverImage}
                     alt={album.albumName}
                     className="img-fluid"
-                    style={{ maxWidth: "100px" }}
                   />
                   <div>
                     <h5>{album.albumName}</h5>
