@@ -28,20 +28,31 @@ const FavSearch = () => {
     { value: "movie", label: "Movie" },
   ];
 
+  // Search Results
+  const fetchSearchResults = async () => {
+    const res = await axios.get(iTunesUrlPath, {
+      params: {
+        term: searchTerm,
+        media: media,
+        limit: 10,
+      },
+    });
+    console.log(res.data);
+    setSearchResults(res.data.results);
+  };
+
   useEffect(() => {
-    const fetchSearchResults = async () => {
-      const res = await axios.get(iTunesUrlPath, {
-        params: {
-          term: searchTerm,
-          media: media,
-          limit: 10,
-        },
-      });
-      console.log(res.data);
-      setSearchResults(res.data.results);
-    };
     fetchSearchResults();
   }, [searchTerm, media]);
+
+  const fetchFavResults = async () => {
+    const res = await axios.get(`${urlPath}`);
+    setItems(res.data);
+  };
+
+  useEffect(() => {
+    fetchFavResults();
+  }, []);
 
   const handleSearchTermChange = (event) => {
     // Prevent script injections
