@@ -111,7 +111,7 @@ const FavSearch = () => {
                   {result.trackName} by {result.artistName}
                 </a>
                 {token_storage && (
-                  <AddFav item={result} onAdd={handleAddItem} />
+                  <AddFav item={result} handleAddItem={handleAddItem} />
                 )}
               </li>
             ))}
@@ -129,7 +129,7 @@ const FavSearch = () => {
                 <p>{item.longDescription}</p>
                 <p>Released: {item.releaseDate.substring(0, 10)}</p>
                 {token_storage && (
-                  <RemoveFav item={item} onRemove={handleRemoveItem} />
+                  <RemoveFav item={item} handleRemoveItem={handleRemoveItem} />
                 )}
               </li>
             ))}

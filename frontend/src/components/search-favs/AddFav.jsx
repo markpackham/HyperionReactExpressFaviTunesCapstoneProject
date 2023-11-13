@@ -1,8 +1,8 @@
 import PropTypes from "prop-types";
 
-const AddFav = ({ item, onAdd }) => {
+const AddFav = ({ item, handleAddItem }) => {
   return (
-    <button className="btn btn-primary" onClick={() => onAdd(item)}>
+    <button className="btn btn-primary" onClick={() => handleAddItem(item)}>
       Add
     </button>
   );
@@ -10,7 +10,7 @@ const AddFav = ({ item, onAdd }) => {
 
 AddFav.propTypes = {
   item: PropTypes.object.isRequired,
-  onAdd: PropTypes.func.isRequired,
+  handleAddItem: PropTypes.func.isRequired,
 };
 
 export default AddFav;

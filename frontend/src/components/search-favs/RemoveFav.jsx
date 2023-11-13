@@ -1,8 +1,11 @@
 import PropTypes from "prop-types";
 
-const RemoveFav = ({ item, onRemove }) => {
+const RemoveFav = ({ item, handleRemoveItem }) => {
   return (
-    <button className="btn btn-danger" onClick={() => onRemove(item.trackId)}>
+    <button
+      className="btn btn-danger"
+      onClick={() => handleRemoveItem(item.trackId)}
+    >
       Remove
     </button>
   );
