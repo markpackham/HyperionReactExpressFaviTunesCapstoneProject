@@ -13,7 +13,7 @@ const RemoveFav = ({ item, handleRemoveItem }) => {
 
 RemoveFav.propTypes = {
   item: PropTypes.object.isRequired,
-  onRemove: PropTypes.func.isRequired,
+  handleRemoveItem: PropTypes.func.isRequired,
 };
 
 export default RemoveFav;
