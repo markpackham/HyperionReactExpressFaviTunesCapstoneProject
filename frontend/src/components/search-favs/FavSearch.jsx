@@ -191,13 +191,13 @@ const FavSearch = () => {
                 {item.longDescription && (
                   <>
                     <Button variant="primary" onClick={() => setShow(true)}>
-                      Show Description
+                      Show More Info
                     </Button>
                     <Modal show={show} onHide={() => setShow(false)}>
                       <Modal.Header closeButton>
                         <Modal.Title>{item.trackName}</Modal.Title>
                       </Modal.Header>
-                      <Modal.Body>{item.longDescription}</Modal.Body>
+                      <Modal.Body>{item.shortDescription}</Modal.Body>
                       <Modal.Footer>
                         <Button
                           variant="secondary"
