@@ -72,6 +72,8 @@ const Login = () => {
   return (
     <>
       <h1>Login</h1>
+      <hr />
+
       {token_storage && (
         <h4 className="text-success mt-4 mb-4">
           Congrats, you are logged in and can add music & books to your favs.

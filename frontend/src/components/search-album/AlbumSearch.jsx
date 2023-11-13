@@ -59,6 +59,7 @@ const AlbumSearch = () => {
   return (
     <div>
       <h1>Album Info Search</h1>
+      <hr />
       <p>
         An example artist name:<strong>U2</strong> album name:
         <strong>War</strong>.

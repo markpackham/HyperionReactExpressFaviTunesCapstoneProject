@@ -136,6 +136,7 @@ const FavSearch = () => {
   return (
     <div>
       <h1>Fav Media Search</h1>
+      <hr />
 
       {!token_storage && (
         <h3>

@@ -77,6 +77,8 @@ const Register = () => {
   return (
     <>
       <h1>Register</h1>
+      <hr />
+
       {token_storage && (
         <h4 className="text-success mt-4 mb-4">
           If you are registered please go <Link to="/login">Login</Link> with
