@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 
+// fav media item so a book, movie, piece of music etc
 const favSchema = mongoose.Schema({
   trackId: {
     type: String,
