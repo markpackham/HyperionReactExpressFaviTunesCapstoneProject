@@ -24,8 +24,13 @@ const AlbumSearch = () => {
     onSubmit: () => {
       axios
         .post(`${albumUrlPath}`, {
-          albumName: DOMPurify.sanitize(formik.values.albumName),
-          artistName: DOMPurify.sanitize(formik.values.artistName),
+          albumName: DOMPurify.sanitize(
+            // Replaces spaces with +
+            formik.values.albumName.split(" ").join("+")
+          ),
+          artistName: DOMPurify.sanitize(
+            formik.values.artistName.split(" ").join("+")
+          ),
         })
         .then((res) => {
           if (res.status === 200) {
@@ -64,7 +69,7 @@ const AlbumSearch = () => {
         <label htmlFor="artistName">Artist Name:</label>
         <input
           id="artistName"
-          type="password"
+          type="text"
           className="form-control"
           {...formik.getFieldProps("artistName")}
         />
