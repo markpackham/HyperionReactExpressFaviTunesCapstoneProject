@@ -10,7 +10,7 @@ const {
 // POST
 router.post(
   "/search/add",
-  // [jsonCheckMiddleware, tokenCheckMiddleware],
+  [jsonCheckMiddleware, tokenCheckMiddleware],
   favController.create
 );
 

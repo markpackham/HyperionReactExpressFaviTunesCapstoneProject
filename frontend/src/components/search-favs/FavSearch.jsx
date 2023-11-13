@@ -55,11 +55,13 @@ const FavSearch = () => {
       trackViewUrl: item.trackViewUrl,
       longsDescription: item.longDescription,
       releaseDate: item.releaseDate,
+      token_storage: token_storage,
     };
 
     console.log(newItem);
 
-    // Send Post to Express
+    // POST to Express
+    // http://localhost:8080/favs/search/add
     fetch(`${urlPath}search/add`, {
       method: "POST",
       headers: {
@@ -76,6 +78,8 @@ const FavSearch = () => {
       });
   };
 
+  // DELETE
+  // http://localhost:8080/favs/search/add
   const handleRemoveItem = (trackIdToRemove) => {
     setItems(items.filter((item) => item.trackId !== trackIdToRemove));
   };
