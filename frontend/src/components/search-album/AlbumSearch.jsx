@@ -103,10 +103,14 @@ const AlbumSearch = () => {
         <div className="col-sm-12 col-md-6 item-search">
           <ul>
             {albums.map((album) => (
-              <li key={album.albumName}>
+              <li key={album.albumName} className="mt-2">
                 {album.albumName} by {album.artistName} released on{" "}
                 {album.releaseDate.substring(0, 10)}
-                <img src={album.albumCoverImage} alt={album.albumName} />
+                <img
+                  src={album.albumCoverImage}
+                  alt={album.albumName}
+                  className="m-2"
+                />
               </li>
             ))}
           </ul>
