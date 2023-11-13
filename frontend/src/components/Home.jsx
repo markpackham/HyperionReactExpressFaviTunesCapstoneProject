@@ -16,6 +16,9 @@ const Home = () => {
 
       <div className="lowerImage d-flex justify-content-center">
         {/* Image is purely decorative so alt="" means a screen reader will ignore it */}
+        {/* Learned from
+        Accessibility Meaningful &amp; Decorative Images (no date) Accessibility Meaningful and Decorative Images. 
+        Available at: https://www.w3schools.com/accessibility/accessibility_meaningful_images.php (Accessed: 13 November 2023).  */}
         <img src="../../../public/music_images/music4.jpg" alt="" />
       </div>
 
