@@ -17,7 +17,7 @@ const FavSearch = () => {
   // Fav media items
   const [items, setItems] = useState([]);
   const [media, setMedia] = useState("all");
-  const [show, setShow] = useState(false);
+  const [show, setShowMoreInfo] = useState(false);
 
   // Grab session storage, will be empty for logged out users
   const token_storage = sessionStorage.getItem("jwt_token");
@@ -190,10 +190,13 @@ const FavSearch = () => {
                 <p>Media Kind: {item.kind}</p>
                 {item.longDescription && (
                   <>
-                    <Button variant="primary" onClick={() => setShow(true)}>
+                    <Button
+                      variant="primary"
+                      onClick={() => setShowMoreInfo(true)}
+                    >
                       More Info
                     </Button>
-                    <Modal show={show} onHide={() => setShow(false)}>
+                    <Modal show={show} onHide={() => setShowMoreInfo(false)}>
                       <Modal.Header closeButton>
                         <Modal.Title>{item.trackName}</Modal.Title>
                       </Modal.Header>
@@ -201,7 +204,7 @@ const FavSearch = () => {
                       <Modal.Footer>
                         <Button
                           variant="secondary"
-                          onClick={() => setShow(false)}
+                          onClick={() => setShowMoreInfo(false)}
                         >
                           Close
                         </Button>
