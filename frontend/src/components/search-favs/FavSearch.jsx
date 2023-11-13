@@ -197,7 +197,7 @@ const FavSearch = () => {
                       <Modal.Header closeButton>
                         <Modal.Title>{item.trackName}</Modal.Title>
                       </Modal.Header>
-                      <Modal.Body>{item.shortDescription}</Modal.Body>
+                      <Modal.Body>{item.longDescription}</Modal.Body>
                       <Modal.Footer>
                         <Button
                           variant="secondary"
