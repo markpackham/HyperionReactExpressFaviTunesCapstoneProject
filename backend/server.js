@@ -10,10 +10,11 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 // Import routes
-const getTodos = require("./routes/secure/getTodos");
+const addDeleteFavs = require("./routes/secure/addDeleteFavs");
+const getAlbumInfo = require("./routes/getAlbumInfo");
+const getFavs = require("./routes/getFavs");
 const login = require("./routes/login");
 const register = require("./routes/register");
-const getAlbumInfo = require("./routes/getAlbumInfo");
 
 // Initialize middleware
 const app = express();
@@ -46,10 +47,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Set up routes to be handled from: http://localhost:8080/favs
-app.use("/favs/secure", getTodos);
+app.use("/favs", getAlbumInfo);
+app.use("/favs", getFavs);
 app.use("/favs", login);
 app.use("/favs", register);
-app.use("/favs", getAlbumInfo);
+app.use("/favs/secure", addDeleteFavs);
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);

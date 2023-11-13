@@ -28,8 +28,8 @@ exports.create = async (req, res) => {
 // READ
 exports.findAll = (req, res) => {
   Todo.find()
-    .then((todos) => {
-      res.send(todos);
+    .then((favs) => {
+      res.send(favs);
     })
     .catch((error) => {
       console.log(error);
@@ -40,20 +40,19 @@ exports.findAll = (req, res) => {
 };
 
 // DELETE
-exports.deleteById = async (req, res) => {
+exports.trackId = async (req, res) => {
   try {
-    const todo_id = req.params.todo_id;
-    const deleteResult = await Todo.deleteOne({ todo_id: todo_id });
+    const trackId = req.params.trackId;
+    const deleteResult = await Fav.deleteOne({ trackId: trackId });
 
     if (deleteResult.deletedCount > 0) {
-      res.send("Successfully deleted the todo.");
+      res.send("Successfully deleted the fav media.");
     } else {
-      res.send("Todo not found...");
+      res.send("Fav media not found...");
     }
   } catch (error) {
-    console.error("An error occurred while removing the todo.", error);
     res
       .status(500)
-      .send({ message: "An error occurred while removing the todo." });
+      .send({ message: "An error occurred while removing the fav." });
   }
 };
