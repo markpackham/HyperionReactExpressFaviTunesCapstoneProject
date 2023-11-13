@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Button, Modal } from "react-bootstrap";
 import axios from "axios";
 import DOMPurify from "dompurify";
 import Swal from "sweetalert2";
@@ -15,7 +16,8 @@ const FavSearch = () => {
   const [searchResults, setSearchResults] = useState([]);
   // Fav media items
   const [items, setItems] = useState([]);
-  const [media, setMedia] = useState("ebook");
+  const [media, setMedia] = useState("all");
+  const [show, setShow] = useState(false);
 
   // Grab session storage, will be empty for logged out users
   const token_storage = sessionStorage.getItem("jwt_token");
@@ -77,7 +79,7 @@ const FavSearch = () => {
       artistName: item.artistName,
       kind: item.kind,
       trackViewUrl: item.trackViewUrl,
-      shortDescription: item.shortDescription,
+      longDescription: item.longDescription,
       releaseDate: item.releaseDate,
       token_storage: token_storage,
     };
@@ -186,7 +188,28 @@ const FavSearch = () => {
                   {item.trackName} by {item.artistName}
                 </a>
                 <p>Media Kind: {item.kind}</p>
-                <p>{item.shortDescription}</p>
+                {item.longDescription && (
+                  <>
+                    <Button variant="primary" onClick={() => setShow(true)}>
+                      Show Description
+                    </Button>
+                    <Modal show={show} onHide={() => setShow(false)}>
+                      <Modal.Header closeButton>
+                        <Modal.Title>{item.trackName}</Modal.Title>
+                      </Modal.Header>
+                      <Modal.Body>{item.longDescription}</Modal.Body>
+                      <Modal.Footer>
+                        <Button
+                          variant="secondary"
+                          onClick={() => setShow(false)}
+                        >
+                          Close
+                        </Button>
+                      </Modal.Footer>
+                    </Modal>
+                  </>
+                )}
+
                 <p>Released: {item.releaseDate.substring(0, 10)}</p>
                 {token_storage && (
                   <RemoveFav item={item} handleRemoveItem={handleRemoveItem} />

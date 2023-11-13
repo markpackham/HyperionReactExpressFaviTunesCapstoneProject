@@ -21,7 +21,7 @@ const favSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  longsDescription: {
+  longDescription: {
     type: String,
     required: false,
   },
