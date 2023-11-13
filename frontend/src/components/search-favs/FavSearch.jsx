@@ -55,6 +55,7 @@ const FavSearch = () => {
       body: JSON.stringify(item),
     })
       .then((res) => {
+        console.log(res);
         setItems([...items, item]);
       })
       .catch((error) => {

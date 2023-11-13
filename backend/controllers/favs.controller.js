@@ -1,9 +1,9 @@
-const Todo = require("../models/fav.model");
+const Fav = require("../models/fav.model");
 
 // CREATE
 exports.create = async (req, res) => {
   try {
-    const favModel = new Todo({
+    const favModel = new Fav({
       trackId: req.body.trackId,
       trackName: req.body.trackName,
       artistName: req.body.artistName,
@@ -15,7 +15,7 @@ exports.create = async (req, res) => {
 
     const saveFav = await favModel.save();
 
-    console.log(saveTodo);
+    console.log(saveFav);
     res.status(200).send("The fav media has been added");
   } catch (error) {
     console.error(error);
@@ -27,7 +27,7 @@ exports.create = async (req, res) => {
 
 // READ
 exports.findAll = (req, res) => {
-  Todo.find()
+  Fav.find()
     .then((favs) => {
       res.send(favs);
     })
