@@ -114,7 +114,7 @@ const AlbumSearch = () => {
                   <div>
                     <h5>{album.albumName}</h5>
                     <p className="mb-0">
-                      by {album.artistName} | Released on{" "}
+                      &nbsp;by {album.artistName} | Released on{" "}
                       {album.releaseDate.substring(0, 10)}
                     </p>
                   </div>
