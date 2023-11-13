@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 // User gained via login or register
 const initialState = {
-  userName: "Curently logged out",
+  userName: "",
 };
 
 export const userSlice = createSlice({

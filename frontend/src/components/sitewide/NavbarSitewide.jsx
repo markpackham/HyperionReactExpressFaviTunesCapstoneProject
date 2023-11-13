@@ -10,7 +10,7 @@ const NavbarSitewide = () => {
   const dispatch = useDispatch();
 
   const handleLogout = () => {
-    dispatch(setUserName("Currently logged out"));
+    dispatch(setUserName(userName));
     // Delete token
     sessionStorage.setItem("jwt_token", "");
     navigate("/login");
@@ -49,17 +49,20 @@ const NavbarSitewide = () => {
               </Link>
             </li>
             {token_storage && (
-              <li className="nav-item">
-                <a onClick={handleLogout} className="nav-link" to="/register">
-                  Logout <i className="fa-solid fa-right-from-bracket"></i>
-                </a>
-              </li>
+              <>
+                <li className="nav-item">
+                  <a onClick={handleLogout} className="nav-link" to="/register">
+                    Logout <i className="fa-solid fa-right-from-bracket"></i>
+                  </a>
+                </li>
+
+                <li className="nav-item">
+                  <span className="nav-link">
+                    <strong>Username:</strong> {userName}
+                  </span>
+                </li>
+              </>
             )}
-            <li className="nav-item">
-              <span className="nav-link">
-                <strong>Username:</strong> {userName}
-              </span>
-            </li>
           </ul>
         </div>
       </nav>
