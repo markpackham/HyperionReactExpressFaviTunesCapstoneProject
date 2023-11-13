@@ -119,7 +119,7 @@ const Login = () => {
       </form>
 
       <div className="lowerImage d-flex justify-content-center">
-        <img src="../../../public/music_images/music2.jpg" alt="." />
+        <img src="../../../public/music_images/music2.jpg" alt="" />
       </div>
     </>
   );

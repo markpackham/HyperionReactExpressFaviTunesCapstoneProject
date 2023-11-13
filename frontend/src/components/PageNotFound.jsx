@@ -9,7 +9,7 @@ const PageNotFound = () => {
         <h2 className="m-2">Return Home?</h2>
       </Link>
       <div className="lowerImage d-flex justify-content-center">
-        <img src="../../../public/music_images/music3.jpg" alt="." />
+        <img src="../../../public/music_images/music3.jpg" alt="" />
       </div>
     </>
   );

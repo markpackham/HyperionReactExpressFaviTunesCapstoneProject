@@ -13,8 +13,10 @@ const Home = () => {
         <Link to="/register">registered</Link> and then{" "}
         <Link to="/login">login</Link> to use this site.
       </p>
+
       <div className="lowerImage d-flex justify-content-center">
-        <img src="../../../public/music_images/music4.jpg" alt="." />
+        {/* Image is purely decorative so alt="" means a screen reader will ignore it */}
+        <img src="../../../public/music_images/music4.jpg" alt="" />
       </div>
 
       <p>
@@ -24,7 +26,7 @@ const Home = () => {
         <Link to="/search-album">albums</Link> you are interest in.
       </p>
       <div className="lowerImage d-flex justify-content-center">
-        <img src="../../../public/music_images/recordPlayer3.jpg" alt="." />
+        <img src="../../../public/music_images/recordPlayer3.jpg" alt="" />
       </div>
 
       <>
@@ -33,16 +35,27 @@ const Home = () => {
         </Button>
         <Modal show={show} onHide={() => setShowMoreInfo(false)}>
           <Modal.Header closeButton>
-            <Modal.Title>Title</Modal.Title>
+            <Modal.Title>More About This Site</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <p>Body text</p>
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. At
+              nesciunt temporibus ab veniam officiis. Sint explicabo et facere
+              eaque porro, ea veniam temporibus magnam nihil, minus ullam qui
+              voluptates dolorem?
+            </p>
             <div className="lowerImage d-flex justify-content-center">
               <img
                 src="../../../public/music_images/recordPlayer4.jpg"
-                alt="."
+                alt=""
               />
             </div>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi
+              iure tempora, quae iusto unde veritatis quas facilis. Debitis quia
+              voluptatibus earum error minus, vero cumque repellendus, laborum
+              impedit reprehenderit deserunt!
+            </p>
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={() => setShowMoreInfo(false)}>
