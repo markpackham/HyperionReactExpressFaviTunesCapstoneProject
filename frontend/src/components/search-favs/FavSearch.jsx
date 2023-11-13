@@ -49,6 +49,12 @@ const FavSearch = () => {
   };
 
   const handleAddItem = (item) => {
+    // Escape function if item already in list
+    const result = items.find(({ trackId }) => trackId === item.trackId);
+    if (result) {
+      return;
+    }
+
     const newItem = {
       trackId: item.trackId,
       trackName: item.trackName,
