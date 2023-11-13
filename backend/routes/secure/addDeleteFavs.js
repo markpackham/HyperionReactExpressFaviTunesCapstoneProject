@@ -9,14 +9,14 @@ const {
 
 // POST
 router.post(
-  "/add",
+  "search/add",
   [jsonCheckMiddleware, tokenCheckMiddleware],
   favController.create
 );
 
 // DELETE
 router.delete(
-  "/delete-fav/:trackId",
+  "search/delete-fav/:trackId",
   tokenCheckMiddleware,
   favController.trackId
 );

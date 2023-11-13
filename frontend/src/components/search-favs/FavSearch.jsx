@@ -10,6 +10,7 @@ import { iTunesUrlPath } from "../../global";
 const FavSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  // Fav media items
   const [items, setItems] = useState([]);
   const [media, setMedia] = useState("ebook");
 
@@ -45,7 +46,20 @@ const FavSearch = () => {
   };
 
   const handleAddItem = (item) => {
-    setItems([...items, item]);
+    // Send Post to Express
+    fetch(`${iTunesUrlPath}secure/add`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(item),
+    })
+      .then((res) => {
+        setItems([...items, item]);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   const handleRemoveItem = (trackIdToRemove) => {
