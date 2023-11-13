@@ -191,7 +191,7 @@ const FavSearch = () => {
                 {item.longDescription && (
                   <>
                     <Button variant="primary" onClick={() => setShow(true)}>
-                      Show More Info
+                      More Info
                     </Button>
                     <Modal show={show} onHide={() => setShow(false)}>
                       <Modal.Header closeButton>
