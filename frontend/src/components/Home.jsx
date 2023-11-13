@@ -9,6 +9,10 @@ const Home = () => {
         <Link to="/register">registered</Link> and then{" "}
         <Link to="/login">login</Link> to use this site.
       </p>
+      <div className="lowerImage d-flex justify-content-center">
+        <img src="../../../public/music_images/music4.jpg" alt="." />
+      </div>
+
       <p>
         This is a community project where registered users can add all their
         favorite music, movies and books in lists. Or if you do not want to
@@ -16,7 +20,7 @@ const Home = () => {
         <Link to="/search-album">albums</Link> you are interest in.
       </p>
       <div className="lowerImage d-flex justify-content-center">
-        <img src="../../../public/music_images/music4.jpg" alt="." />
+        <img src="../../../public/music_images/recordPlayer3.jpg" alt="." />
       </div>
     </>
   );
