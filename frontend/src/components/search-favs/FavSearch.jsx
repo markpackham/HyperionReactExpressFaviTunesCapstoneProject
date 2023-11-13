@@ -52,6 +52,10 @@ const FavSearch = () => {
     // Escape function if item already in list
     const result = items.find(({ trackId }) => trackId === item.trackId);
     if (result) {
+      Swal.fire({
+        title: `Sorry, already in fav list.`,
+        icon: "warning",
+      });
       return;
     }
 
