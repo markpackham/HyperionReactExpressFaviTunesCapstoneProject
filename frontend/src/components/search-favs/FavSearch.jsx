@@ -1,12 +1,14 @@
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import DOMPurify from "dompurify";
-import AddFav from "./AddFav";
-import RemoveFav from "./RemoveFav";
-import DropdownSelect from "./DropdownSelect";
+import Swal from "sweetalert2";
+
 import { iTunesUrlPath } from "../../global";
 import { urlPath } from "../../global";
+import AddFav from "./AddFav";
+import DropdownSelect from "./DropdownSelect";
+import RemoveFav from "./RemoveFav";
 
 const FavSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -60,7 +62,7 @@ const FavSearch = () => {
 
     console.log(newItem);
 
-    // POST to Express
+    // POST SECURE route
     // http://localhost:8080/favs/search/add
     fetch(`${urlPath}search/add`, {
       method: "POST",
@@ -78,10 +80,29 @@ const FavSearch = () => {
       });
   };
 
-  // DELETE
-  // http://localhost:8080/favs/search/add
-  const handleRemoveItem = (trackIdToRemove) => {
-    setItems(items.filter((item) => item.trackId !== trackIdToRemove));
+  // DELETE SECURE route
+  // http://localhost:8080/favs/search/delete-fav/:trackId
+  const handleRemoveItem = async (trackIdToRemove) => {
+    const url = `${urlPath}search/delete-fav/${trackIdToRemove}`;
+
+    // Add token to body
+    const res = await fetch(url, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token_storage }),
+    });
+
+    if (res.ok) {
+      Swal.fire({
+        title: `Fav removed.`,
+        icon: "warning",
+      });
+      setItems(items.filter((item) => item.trackId !== trackIdToRemove));
+    } else {
+      console.error(`Failed to delete fav`);
+    }
   };
 
   const handleMediaChange = (value) => {

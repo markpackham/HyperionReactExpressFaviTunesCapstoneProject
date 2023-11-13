@@ -1,13 +1,13 @@
+import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import * as Yup from "yup";
 import axios from "axios";
 import DOMPurify from "dompurify";
-import { useDispatch } from "react-redux";
 import Swal from "sweetalert2";
-import { urlPath } from "../../global";
 
+import { urlPath } from "../../global";
 import { setUserName } from "../../store/userSlice";
 
 const Login = () => {
