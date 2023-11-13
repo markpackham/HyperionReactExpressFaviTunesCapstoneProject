@@ -6,6 +6,7 @@ import AddFav from "./AddFav";
 import RemoveFav from "./RemoveFav";
 import DropdownSelect from "./DropdownSelect";
 import { iTunesUrlPath } from "../../global";
+import { urlPath } from "../../global";
 
 const FavSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -46,13 +47,25 @@ const FavSearch = () => {
   };
 
   const handleAddItem = (item) => {
+    const newItem = {
+      trackId: item.trackId,
+      trackName: item.trackName,
+      artistName: item.artistName,
+      kind: item.kind,
+      trackViewUrl: item.trackViewUrl,
+      longsDescription: item.longDescription,
+      releaseDate: item.releaseDate,
+    };
+
+    console.log(newItem);
+
     // Send Post to Express
-    fetch(`${iTunesUrlPath}secure/add`, {
+    fetch(`${urlPath}search/secure/add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(item),
+      body: JSON.stringify(newItem),
     })
       .then((res) => {
         console.log(res);
