@@ -1,27 +1,31 @@
-const Todo = require("../models/todo.model");
+const Todo = require("../models/fav.model");
 
+// CREATE
 exports.create = async (req, res) => {
   try {
-    const todoModel = new Todo({
-      todo_id: req.body.todo_id,
-      todo_name: req.body.todo_name,
-      todo_description: req.body.todo_description,
+    const favModel = new Todo({
+      trackId: req.body.trackId,
+      trackName: req.body.trackName,
+      artistName: req.body.artistName,
+      kind: req.body.kind,
+      trackViewUrl: req.body.trackViewUrl,
+      longsDescription: req.body.longsDescription,
+      releaseDate: req.body.releaseDate,
     });
 
-    const saveTodo = await todoModel.save();
+    const saveFav = await favModel.save();
 
-    // Success res
     console.log(saveTodo);
-    res.status(200).send("The todo has been added");
+    res.status(200).send("The fav media has been added");
   } catch (error) {
-    // Error res
     console.error(error);
     res.status(500).send({
-      message: "Some error occurred while creating the todo.",
+      message: "Some error occurred while creating the fav.",
     });
   }
 };
 
+// READ
 exports.findAll = (req, res) => {
   Todo.find()
     .then((todos) => {
@@ -30,11 +34,12 @@ exports.findAll = (req, res) => {
     .catch((error) => {
       console.log(error);
       res.status(500).send({
-        message: "An error occurred while retrieving todos",
+        message: "An error occurred while retrieving fav media",
       });
     });
 };
 
+// DELETE
 exports.deleteById = async (req, res) => {
   try {
     const todo_id = req.params.todo_id;

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const itemSchema = mongoose.Schema({
+const favSchema = mongoose.Schema({
   trackId: {
     type: String,
     required: true,
@@ -31,4 +31,4 @@ const itemSchema = mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Item", itemSchema);
+module.exports = mongoose.model("Fav", favSchema);
