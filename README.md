@@ -6,11 +6,12 @@ It includes the following:
 - Bootstrap is used for modals and styling and included via the React Bootstrap UI library
 - Concurrently so a simple "npm start" will install all modules and run the app at the same time
 - Cors is added to prevent issues with both frontend and backend running locally
+- Dotenv is used to store sensitive values to access the online database
 - DOMPurify is used to remove malicious code injections when dealing with forms
 - Express to run as the backend server
 - Formik for form validation feedback
 - Jsonwebtoken to identify users and their access rights
-- MongoDB to store users, jwt tokens and todos
+- MongoDB to store users, jwt tokens and items add by users to the fav media list
 - Mongoose to connect to Mongo DB
 - Nodemon to save the dev from having to constantly restart the server after changes
 - React is used for the frontend created via Vite
