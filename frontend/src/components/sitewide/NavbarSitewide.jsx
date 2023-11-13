@@ -37,18 +37,22 @@ const NavbarSitewide = () => {
                 Album Info <i className="fa-solid fa-record-vinyl"></i>
               </Link>
             </li>
+            {/* Hide if user has token */}
             {!token_storage && (
-              <li className="nav-item">
-                <Link className="nav-link" to="/login">
-                  Login <i className="fa-solid fa-right-to-bracket" />
-                </Link>
-              </li>
+              <>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/login">
+                    Login <i className="fa-solid fa-right-to-bracket" />
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/register">
+                    Register <i className="fa-solid fa-registered" />
+                  </Link>
+                </li>
+              </>
             )}
-            <li className="nav-item">
-              <Link className="nav-link" to="/register">
-                Register <i className="fa-solid fa-registered" />
-              </Link>
-            </li>
+            {/* Show if user has token */}
             {token_storage && (
               <>
                 <li className="nav-item">

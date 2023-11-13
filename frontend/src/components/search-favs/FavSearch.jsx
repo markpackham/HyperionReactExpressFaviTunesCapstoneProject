@@ -36,7 +36,7 @@ const FavSearch = () => {
       params: {
         term: searchTerm,
         media: media,
-        limit: 10,
+        limit: 15,
       },
     });
     console.log(res.data);

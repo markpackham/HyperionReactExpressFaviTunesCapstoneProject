@@ -9,7 +9,7 @@ exports.create = async (req, res) => {
       artistName: req.body.artistName,
       kind: req.body.kind,
       trackViewUrl: req.body.trackViewUrl,
-      shortDescription: req.body.shortDescription,
+      longDescription: req.body.longDescription,
       releaseDate: req.body.releaseDate,
     });
 
