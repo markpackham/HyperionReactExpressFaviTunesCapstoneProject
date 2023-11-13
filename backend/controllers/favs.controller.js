@@ -4,13 +4,13 @@ const Fav = require("../models/fav.model");
 exports.create = async (req, res) => {
   try {
     const favModel = new Fav({
-      trackId: req.body.trackId,
-      trackName: req.body.trackName,
-      artistName: req.body.artistName,
-      kind: req.body.kind,
-      trackViewUrl: req.body.trackViewUrl,
-      longsDescription: req.body.longsDescription,
-      releaseDate: req.body.releaseDate,
+      trackId: req.query.trackId,
+      trackName: req.query.trackName,
+      artistName: req.query.artistName,
+      kind: req.query.kind,
+      trackViewUrl: req.query.trackViewUrl,
+      longsDescription: req.query.longsDescription,
+      releaseDate: req.query.releaseDate,
     });
 
     const saveFav = await favModel.save();

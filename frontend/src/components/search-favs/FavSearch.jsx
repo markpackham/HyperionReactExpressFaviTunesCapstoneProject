@@ -60,7 +60,7 @@ const FavSearch = () => {
     console.log(newItem);
 
     // Send Post to Express
-    fetch(`${urlPath}search/secure/add`, {
+    fetch(`${urlPath}search/add`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
