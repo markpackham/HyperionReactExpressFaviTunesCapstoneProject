@@ -222,6 +222,9 @@ const FavSearch = () => {
           </ul>
         </div>
       </div>
+      <div className="lowerImage d-flex justify-content-center">
+        <img src="../../../public/music_images/recordPlayer2.jpg" alt="." />
+      </div>
     </div>
   );
 };

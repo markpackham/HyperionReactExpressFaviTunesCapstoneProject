@@ -42,6 +42,11 @@ h5 {
   text-align: center;
 }
 
+img {
+  border-radius: 10px;
+  box-shadow: var(--box-shadow-secondary);
+}
+
 input {
   margin: 3px;
 }
@@ -66,8 +71,18 @@ nav ul li a:hover {
   font-weight: bold;
 }
 
+/* Ids */
 #nav-section {
   background-color: var(--card-bg-color);
+}
+
+/* Classes */
+.lowerImage {
+  margin-top: 1.2rem;
+}
+
+.lowerImage img {
+  max-width: 400px;
 }
 
 
@@ -75,5 +90,17 @@ nav ul li a:hover {
 @media screen and (max-width: 991px) {
   nav ul {
     margin: auto;
+  }
+}
+
+@media screen and (max-width: 420px) {
+
+  /* Classes */
+  .lowerImage {
+    margin-top: 1.1rem;
+  }
+
+  .lowerImage img {
+    max-width: 280px;
   }
 }

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div>
+    <>
       <h2>Store All Your Fav Music, Movies & Books Right Here!</h2>
       <p>
         To fully use this site please make sure that you have first{" "}
@@ -15,7 +15,10 @@ const Home = () => {
         register you can search for more detailed info on{" "}
         <Link to="/search-album">albums</Link> you are interest in.
       </p>
-    </div>
+      <div className="lowerImage d-flex justify-content-center">
+        <img src="../../../public/music_images/music4.jpg" alt="." />
+      </div>
+    </>
   );
 };
 
