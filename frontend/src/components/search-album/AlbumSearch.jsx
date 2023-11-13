@@ -100,17 +100,25 @@ const AlbumSearch = () => {
       </form>
 
       <div className="row">
-        <div className="col-sm-12 col-md-6 item-search">
-          <ul>
+        <div className="col-sm-12 col-md-6">
+          <ul className="list-group">
             {albums.map((album) => (
-              <li key={album.albumName} className="mt-2">
-                {album.albumName} by {album.artistName} released on{" "}
-                {album.releaseDate.substring(0, 10)}
-                <img
-                  src={album.albumCoverImage}
-                  alt={album.albumName}
-                  className="m-2"
-                />
+              <li key={album.albumName} className="list-group-item mt-2">
+                <div className="d-flex align-items-center">
+                  <img
+                    src={album.albumCoverImage}
+                    alt={album.albumName}
+                    className="img-fluid"
+                    style={{ maxWidth: "100px" }}
+                  />
+                  <div>
+                    <h5>{album.albumName}</h5>
+                    <p className="mb-0">
+                      by {album.artistName} | Released on{" "}
+                      {album.releaseDate.substring(0, 10)}
+                    </p>
+                  </div>
+                </div>
               </li>
             ))}
           </ul>
