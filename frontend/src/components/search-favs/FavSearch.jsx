@@ -9,6 +9,7 @@ import { urlPath } from "../../global";
 import AddFav from "./AddFav";
 import DropdownSelect from "./DropdownSelect";
 import FavItem from "./FavItem";
+import SearchItem from "./SearchItem";
 
 const FavSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -143,39 +144,11 @@ const FavSearch = () => {
       </p>
       <div className="row">
         <div className="col-sm-12 col-md-6 item-search card-body">
-          <table className="table table-striped">
-            <thead>
-              <tr>
-                <th>Track Name</th>
-                <th>Artist Name</th>
-                <th>Add to list</th>
-              </tr>
-            </thead>
-            <tbody>
-              {searchResults
-                // We only care about items with trackIds and trackNames
-                .filter((result) => result.trackId && result.trackName)
-                .map((result) => (
-                  <tr key={result.trackId}>
-                    <td>
-                      <a
-                        href={result.trackViewUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                      >
-                        {result.trackName}
-                      </a>
-                    </td>
-                    <td>{result.artistName}</td>
-                    <td>
-                      {token_storage && (
-                        <AddFav item={result} handleAddItem={handleAddItem} />
-                      )}
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
+          <SearchItem
+            searchResults={searchResults}
+            token_storage={token_storage}
+            handleAddItem={handleAddItem}
+          />
         </div>
         <div className="col-sm-12 col-md-6 item-list">
           <h3 className="list-group-item-heading">Your fav list</h3>
