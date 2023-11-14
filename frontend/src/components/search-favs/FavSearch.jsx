@@ -164,12 +164,14 @@ const FavSearch = () => {
         />
       </div>
       <p className="mt-2">
-        <strong>Media Item Category</strong>
+        <strong>Media Item Category</strong> click on the button to change
+        category!
       </p>
       <DropdownSelect
         options={mediaOptions}
         value={media}
         onChange={handleMediaChange}
+        alt="Media Button Category Selector"
       />
       <div className="row mt-2">
         <div className="col-sm-12 col-md-6 item-search card-body">
