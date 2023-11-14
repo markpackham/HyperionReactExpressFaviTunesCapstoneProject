@@ -94,8 +94,11 @@ const FavSearch = () => {
       body: JSON.stringify(newItem),
     })
       .then((res) => {
-        console.log(res);
         setItems([...items, item]);
+        Swal.fire({
+          title: `Fav added to list!`,
+          icon: "success",
+        });
       })
       .catch((error) => {
         console.log(error);

@@ -30,10 +30,11 @@ A full-stack web application using React and Express that interfaces with the iT
 
 Code was written in Node.JS version 21. Node should be at the very least version 18.
 
-If you wish to run it on your own instance of MongoDB then change this line 
+If I haven't provided you with the .env file that has access to my database & you wish to run it on your own instance of MongoDB then change this line to your own settings.
 ```
 const uri = `mongodb+srv://graveofmine99:${password}@hyperiondevlearning.dpl6f6p.mongodb.net/?retryWrites=true&w=majority`;
-``` in the ``` backend/server.js ``` file and make sure you have 2 collections called "users" and "favs".
+``` 
+in the backend/server.js file and make sure you have 2 collections called "users" and "favs".
 
 
 
