@@ -139,19 +139,29 @@ const FavSearch = () => {
         <strong>Sub Category</strong> (eg Music Track or Music Video)
       </p>
       <div className="row">
-        <div className="col-sm-12 col-md-6 item-search">
-          <ul>
-            {searchResults.map((result) => (
-              <li key={result.trackId}>
-                <a href={result.trackViewUrl} target="_blank" rel="noreferrer">
-                  {result.trackName} by {result.artistName}
-                </a>
-                {token_storage && (
-                  <AddFav item={result} handleAddItem={handleAddItem} />
-                )}
-              </li>
-            ))}
-          </ul>
+        <div className="col-sm-12 col-md-6 item-search card-body">
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th>Track Name</th>
+                <th>Artist Name</th>
+                <th>Add to Favs</th>
+              </tr>
+            </thead>
+            <tbody>
+              {searchResults.map((result) => (
+                <tr key={result.trackId}>
+                  <td>{result.trackName}</td>
+                  <td>{result.artistName}</td>
+                  <td>
+                    {token_storage && (
+                      <AddFav item={result} handleAddItem={handleAddItem} />
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
         <div className="col-sm-12 col-md-6 item-list">
           <h3 className="list-group-item-heading">Your fav list</h3>
