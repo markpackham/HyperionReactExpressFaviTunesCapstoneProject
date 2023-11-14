@@ -16,7 +16,7 @@ const FavSearch = () => {
 
   // Fav media items
   const [items, setItems] = useState([]);
-  const [media, setMedia] = useState("all");
+  const [media, setMedia] = useState("music");
 
   // Grab session storage, will be empty for logged out users
   const token_storage = sessionStorage.getItem("jwt_token");
