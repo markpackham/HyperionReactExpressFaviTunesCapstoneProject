@@ -22,6 +22,9 @@ const AlbumSearch = () => {
       albumName: Yup.string().max(140).required("Required"),
       artistName: Yup.string().max(140).required("Required"),
     }),
+
+    // Users posts what they want to look for to Express which consults the iTunes API
+    // results are then sent back to React
     onSubmit: () => {
       axios
         .post(`${albumUrlPath}`, {

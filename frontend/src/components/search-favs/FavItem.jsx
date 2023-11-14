@@ -84,7 +84,7 @@ const FavItem = ({ item }) => {
 FavItem.propTypes = {
   // What makes up a fav media item
   item: PropTypes.shape({
-    trackId: PropTypes.number.isRequired,
+    trackId: PropTypes.string.isRequired,
     trackName: PropTypes.string.isRequired,
     artistName: PropTypes.string.isRequired,
     kind: PropTypes.string.isRequired,

@@ -145,7 +145,7 @@ const FavSearch = () => {
               <tr>
                 <th>Track Name</th>
                 <th>Artist Name</th>
-                <th>Add to Favs</th>
+                <th>Add to list</th>
               </tr>
             </thead>
             <tbody>
