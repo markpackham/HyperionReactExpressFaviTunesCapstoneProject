@@ -1,5 +1,6 @@
 import { Button, Modal } from "react-bootstrap";
 import { useState } from "react";
+import PropTypes from "prop-types";
 import Swal from "sweetalert2";
 
 import { urlPath } from "../../global";
@@ -78,6 +79,19 @@ const FavItem = ({ item }) => {
       )}
     </li>
   );
+};
+
+FavItem.propTypes = {
+  // What makes up a fav media item
+  item: PropTypes.shape({
+    trackId: PropTypes.number.isRequired,
+    trackName: PropTypes.string.isRequired,
+    artistName: PropTypes.string.isRequired,
+    kind: PropTypes.string.isRequired,
+    trackViewUrl: PropTypes.string.isRequired,
+    longDescription: PropTypes.string,
+    releaseDate: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default FavItem;
