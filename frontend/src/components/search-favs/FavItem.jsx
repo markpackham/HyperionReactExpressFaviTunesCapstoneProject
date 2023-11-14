@@ -38,7 +38,7 @@ const FavItem = ({ item }) => {
   };
 
   return (
-    <li className="list-group-item mt-1" key={item.trackId}>
+    <li className="list-group-item mt-1">
       <h5>
         <a href={item.trackViewUrl} target="_blank" rel="noreferrer">
           {item.trackName} by {item.artistName}

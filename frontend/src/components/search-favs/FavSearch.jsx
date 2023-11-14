@@ -72,7 +72,7 @@ const FavSearch = () => {
     }
 
     const newItem = {
-      trackId: item.trackId,
+      trackId: item.trackId.toString(),
       trackName: item.trackName,
       artistName: item.artistName,
       kind: item.kind,
