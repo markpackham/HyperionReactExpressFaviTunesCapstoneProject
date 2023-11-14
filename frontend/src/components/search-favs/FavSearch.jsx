@@ -10,6 +10,7 @@ import { urlPath } from "../../global";
 import AddFav from "./AddFav";
 import DropdownSelect from "./DropdownSelect";
 import RemoveFav from "./RemoveFav";
+import FavItem from "./FavItem";
 
 const FavSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -17,7 +18,6 @@ const FavSearch = () => {
   // Fav media items
   const [items, setItems] = useState([]);
   const [media, setMedia] = useState("all");
-  const [show, setShowMoreInfo] = useState(false);
 
   // Grab session storage, will be empty for logged out users
   const token_storage = sessionStorage.getItem("jwt_token");
@@ -104,31 +104,6 @@ const FavSearch = () => {
       });
   };
 
-  // DELETE SECURE route
-  // http://localhost:8080/favs/search/delete-fav/:trackId
-  const handleRemoveItem = async (trackIdToRemove) => {
-    const url = `${urlPath}search/delete-fav/${trackIdToRemove}`;
-
-    // Add token to body
-    const res = await fetch(url, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ token_storage }),
-    });
-
-    if (res.ok) {
-      Swal.fire({
-        title: `Fav removed.`,
-        icon: "warning",
-      });
-      setItems(items.filter((item) => item.trackId !== trackIdToRemove));
-    } else {
-      console.error(`Failed to delete fav`);
-    }
-  };
-
   const handleMediaChange = (value) => {
     setMedia(value);
   };
@@ -184,49 +159,7 @@ const FavSearch = () => {
           <h3 className="list-group-item-heading">Your fav list</h3>
           <ul className="list-group">
             {items.map((item) => (
-              <li className="list-group-item mt-1" key={item.trackId}>
-                <h5>
-                  <a href={item.trackViewUrl} target="_blank" rel="noreferrer">
-                    {item.trackName} by {item.artistName}
-                  </a>
-                </h5>
-
-                <p className="list-group-item-text">
-                  <strong>Media Kind: </strong>
-                  {item.kind}
-                </p>
-                {item.longDescription && (
-                  <>
-                    <Button
-                      variant="primary"
-                      onClick={() => setShowMoreInfo(true)}
-                    >
-                      More Info
-                    </Button>
-                    <Modal show={show} onHide={() => setShowMoreInfo(false)}>
-                      <Modal.Header closeButton>
-                        <Modal.Title>{item.trackName}</Modal.Title>
-                      </Modal.Header>
-                      <Modal.Body>{item.longDescription}</Modal.Body>
-                      <Modal.Footer>
-                        <Button
-                          variant="secondary"
-                          onClick={() => setShowMoreInfo(false)}
-                        >
-                          Close
-                        </Button>
-                      </Modal.Footer>
-                    </Modal>
-                  </>
-                )}
-
-                <p className="mt-2">
-                  <strong>Released:</strong> {item.releaseDate.substring(0, 10)}
-                </p>
-                {token_storage && (
-                  <RemoveFav item={item} handleRemoveItem={handleRemoveItem} />
-                )}
-              </li>
+              <FavItem item={item} />
             ))}
           </ul>
         </div>
