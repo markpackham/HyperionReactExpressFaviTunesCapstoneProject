@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 // My custom code imports
 import { albumUrlPath } from "../../global";
 import { useState } from "react";
+import AlbumItem from "./AlbumItem";
 
 const AlbumSearch = () => {
   const [albums, setAlbums] = useState([]);
@@ -108,22 +109,7 @@ const AlbumSearch = () => {
         <div className="col-sm-12 col-md-6">
           <ul className="list-group">
             {albums.map((album) => (
-              <li key={album.albumName} className="list-group-item mt-2">
-                <div className="d-flex align-items-center">
-                  <img
-                    src={album.albumCoverImage}
-                    alt={album.albumName}
-                    className="img-fluid"
-                  />
-                  <div>
-                    <h5 className="p-2">{album.albumName}</h5>
-                    <p className="p-2">
-                      &nbsp;by {album.artistName} | Released on{" "}
-                      {album.releaseDate.substring(0, 10)}
-                    </p>
-                  </div>
-                </div>
-              </li>
+              <AlbumItem album={album} key={album.albumName} />
             ))}
           </ul>
         </div>
