@@ -13,23 +13,21 @@ const SearchItem = ({ searchResults, token_storage, handleAddItem }) => {
         </tr>
       </thead>
       <tbody>
-        {searchResults
-          .filter((result) => result.trackId && result.trackName)
-          .map((result) => (
-            <tr key={result.trackId}>
-              <td>
-                <a href={result.trackViewUrl} target="_blank" rel="noreferrer">
-                  {result.trackName}
-                </a>
-              </td>
-              <td>{result.artistName}</td>
-              <td>
-                {token_storage && (
-                  <AddFav item={result} handleAddItem={handleAddItem} />
-                )}
-              </td>
-            </tr>
-          ))}
+        {searchResults.map((result) => (
+          <tr key={result.trackId}>
+            <td>
+              <a href={result.trackViewUrl} target="_blank" rel="noreferrer">
+                {result.trackName}
+              </a>
+            </td>
+            <td>{result.artistName}</td>
+            <td>
+              {token_storage && (
+                <AddFav item={result} handleAddItem={handleAddItem} />
+              )}
+            </td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
