@@ -116,8 +116,8 @@ const AlbumSearch = () => {
                     className="img-fluid"
                   />
                   <div>
-                    <h5>{album.albumName}</h5>
-                    <p className="mb-0">
+                    <h5 className="p-2">{album.albumName}</h5>
+                    <p className="p-2">
                       &nbsp;by {album.artistName} | Released on{" "}
                       {album.releaseDate.substring(0, 10)}
                     </p>

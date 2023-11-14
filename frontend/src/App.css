@@ -84,6 +84,10 @@ nav ul li a:hover {
 }
 
 /* Classes */
+.item-list ul li {
+  padding: 6px;
+}
+
 .lowerImage {
   margin-top: 1.2rem;
   margin-bottom: 1.2rem;
@@ -92,7 +96,6 @@ nav ul li a:hover {
 .lowerImage img {
   max-width: 400px;
 }
-
 
 /* Media Queries */
 @media screen and (max-width: 991px) {
