@@ -163,26 +163,28 @@ const FavSearch = () => {
         />
       </div>
       <p className="mt-2">
-        <strong>Item Category</strong>
+        <strong>Media Item Category</strong>
       </p>
       <DropdownSelect
         options={mediaOptions}
         value={media}
         onChange={handleMediaChange}
       />
-      <p className="mt-2">
-        <strong>Sub Category</strong> (eg Music Track or Music Video)
-      </p>
-      <div className="row">
+      <div className="row mt-2">
         <div className="col-sm-12 col-md-6 item-search card-body">
           <SearchItem
             searchResults={searchResults}
             token_storage={token_storage}
             handleAddItem={handleAddItem}
           />
+          <div className="lowerImage d-flex justify-content-center">
+            <img src="/music_images/recordPlayer2.jpg" alt="" />
+          </div>
         </div>
         <div className="col-sm-12 col-md-6 item-list">
-          <h3 className="list-group-item-heading">Your fav list</h3>
+          <h3 className="list-group-item-heading">
+            Your fav list <i className="fa-solid fa-star"></i>
+          </h3>
           <ul className="list-group">
             {items.map((item) => (
               <FavItem
@@ -192,10 +194,14 @@ const FavSearch = () => {
               />
             ))}
           </ul>
+          <div className="lowerImage d-flex justify-content-center">
+            <img src="/book_images/book2.jpg" alt="" />
+          </div>
         </div>
       </div>
+
       <div className="lowerImage d-flex justify-content-center">
-        <img src="/music_images/recordPlayer2.jpg" alt="" />
+        <img src="/book_images/book1.jpg" alt="" />
       </div>
     </div>
   );
