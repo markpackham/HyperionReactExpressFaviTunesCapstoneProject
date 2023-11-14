@@ -14,6 +14,7 @@ import SearchItem from "./SearchItem";
 const FavSearch = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+
   // Fav media items
   const [items, setItems] = useState([]);
   const [media, setMedia] = useState("all");
@@ -38,8 +39,13 @@ const FavSearch = () => {
         limit: 15,
       },
     });
-    console.log(res.data);
-    setSearchResults(res.data.results);
+
+    // We do not want entries with no trackId & no trackName
+    const filteredResults = res.data.results.filter(
+      (result) => result.trackId && result.trackName
+    );
+
+    setSearchResults(filteredResults);
   };
 
   useEffect(() => {
