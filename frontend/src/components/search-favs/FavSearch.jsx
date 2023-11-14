@@ -60,6 +60,8 @@ const FavSearch = () => {
   // Fav List
   const fetchFavResults = async () => {
     const res = await axios.get(`${urlPath}`);
+    // Show latest additions first
+    res.data.reverse();
     setItems(res.data);
   };
 
@@ -101,7 +103,7 @@ const FavSearch = () => {
       body: JSON.stringify(newItem),
     })
       .then((res) => {
-        setItems([...items, item]);
+        setItems([item, ...items]);
         Swal.fire({
           title: `Fav added to list!`,
           icon: "success",

@@ -8,6 +8,7 @@ const should = chai.should();
 // (no date) Sinon.JS - Standalone test fakes, spies, stubs and mocks for JavaScript. Works with any unit testing framework. Available at: https://sinonjs.org/ (Accessed: 14 November 2023).
 const sinon = require("sinon");
 
+// Test user saved with correct attributes
 describe("User", () => {
   beforeEach((done) => {
     sinon.stub(mongoose.Model, "find");
