@@ -1,9 +1,11 @@
+// External module imports at the top
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import DOMPurify from "dompurify";
 import Swal from "sweetalert2";
 
+// My custom code imports
 import { albumUrlPath } from "../../global";
 import { useState } from "react";
 
@@ -11,8 +13,6 @@ const AlbumSearch = () => {
   const [albums, setAlbums] = useState([]);
 
   //url example `http://localhost:8080/favs/album-info?albumName=Greatest+Hits&artistName=Creed`;
-  // First test with single words - Album "War" and artist "U2";
-
   const formik = useFormik({
     initialValues: {
       albumName: "",

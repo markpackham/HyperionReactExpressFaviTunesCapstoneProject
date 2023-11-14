@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import AddFav from "./AddFav";
 
 const SearchItem = ({ searchResults, token_storage, handleAddItem }) => {
@@ -31,6 +33,17 @@ const SearchItem = ({ searchResults, token_storage, handleAddItem }) => {
       </tbody>
     </table>
   );
+};
+
+SearchItem.propTypes = {
+  searchResults: PropTypes.arrayOf(
+    PropTypes.shape({
+      trackId: PropTypes.number.isRequired,
+      trackName: PropTypes.string.isRequired,
+    })
+  ),
+  token_storage: PropTypes.string,
+  handleAddItem: PropTypes.func.isRequired,
 };
 
 export default SearchItem;
