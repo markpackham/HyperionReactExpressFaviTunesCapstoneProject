@@ -151,7 +151,15 @@ const FavSearch = () => {
             <tbody>
               {searchResults.map((result) => (
                 <tr key={result.trackId}>
-                  <td>{result.trackName}</td>
+                  <td>
+                    <a
+                      href={result.trackViewUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      {result.trackName}
+                    </a>
+                  </td>
                   <td>{result.artistName}</td>
                   <td>
                     {token_storage && (
