@@ -7,9 +7,9 @@ const SearchItem = ({ searchResults, token_storage, handleAddItem }) => {
     <table className="table table-striped">
       <thead>
         <tr>
-          <th>Track Name</th>
+          <th>Content Name</th>
           <th>Artist Name</th>
-          <th>Add to list</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>

@@ -6,7 +6,6 @@ import Swal from "sweetalert2";
 
 import { iTunesUrlPath } from "../../global";
 import { urlPath } from "../../global";
-import AddFav from "./AddFav";
 import DropdownSelect from "./DropdownSelect";
 import FavItem from "./FavItem";
 import SearchItem from "./SearchItem";
@@ -200,10 +199,6 @@ const FavSearch = () => {
             <img src="/book_images/book2.jpg" alt="" />
           </div>
         </div>
-      </div>
-
-      <div className="lowerImage d-flex justify-content-center">
-        <img src="/book_images/book1.jpg" alt="" />
       </div>
     </div>
   );

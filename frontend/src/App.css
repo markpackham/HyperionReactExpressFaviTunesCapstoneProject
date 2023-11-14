@@ -20,8 +20,8 @@ body {
 button,
 .btn {
   box-shadow: var(--box-shadow-secondary);
-  height: 40px;
-  margin: 5px;
+  height: 37px;
+  margin: 3px;
 }
 
 button:hover {
