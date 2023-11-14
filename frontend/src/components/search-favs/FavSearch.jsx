@@ -106,6 +106,31 @@ const FavSearch = () => {
       });
   };
 
+  // DELETE SECURE route
+  // http://localhost:8080/favs/search/delete-fav/:trackId
+  const handleRemoveItem = async (trackIdToRemove) => {
+    const url = `${urlPath}search/delete-fav/${trackIdToRemove}`;
+
+    // Add token to body
+    const res = await fetch(url, {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ token_storage }),
+    });
+
+    if (res.ok) {
+      Swal.fire({
+        title: `Fav removed.`,
+        icon: "warning",
+      });
+      setItems(items.filter((item) => item.trackId !== trackIdToRemove));
+    } else {
+      console.error(`Failed to delete fav`);
+    }
+  };
+
   const handleMediaChange = (value) => {
     setMedia(value);
   };
@@ -154,7 +179,11 @@ const FavSearch = () => {
           <h3 className="list-group-item-heading">Your fav list</h3>
           <ul className="list-group">
             {items.map((item) => (
-              <FavItem item={item} key={item.trackId} />
+              <FavItem
+                item={item}
+                handleRemoveItem={handleRemoveItem}
+                key={item.trackId}
+              />
             ))}
           </ul>
         </div>

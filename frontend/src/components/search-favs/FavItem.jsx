@@ -1,41 +1,13 @@
 import { Button, Modal } from "react-bootstrap";
 import { useState } from "react";
 import PropTypes from "prop-types";
-import Swal from "sweetalert2";
 
-import { urlPath } from "../../global";
 import RemoveFav from "./RemoveFav";
 
-const FavItem = ({ item }) => {
+const FavItem = ({ item, handleRemoveItem }) => {
   const [show, setShowMoreInfo] = useState(false);
-  const [items, setItems] = useState([]);
 
   const token_storage = sessionStorage.getItem("jwt_token");
-
-  // DELETE SECURE route
-  // http://localhost:8080/favs/search/delete-fav/:trackId
-  const handleRemoveItem = async (trackIdToRemove) => {
-    const url = `${urlPath}search/delete-fav/${trackIdToRemove}`;
-
-    // Add token to body
-    const res = await fetch(url, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ token_storage }),
-    });
-
-    if (res.ok) {
-      Swal.fire({
-        title: `Fav removed.`,
-        icon: "warning",
-      });
-      setItems(items.filter((item) => item.trackId !== trackIdToRemove));
-    } else {
-      console.error(`Failed to delete fav`);
-    }
-  };
 
   return (
     <li className="list-group-item mt-1">
@@ -92,6 +64,7 @@ FavItem.propTypes = {
     longDescription: PropTypes.string,
     releaseDate: PropTypes.string.isRequired,
   }).isRequired,
+  handleRemoveItem: PropTypes.func.isRequired,
 };
 
 export default FavItem;
