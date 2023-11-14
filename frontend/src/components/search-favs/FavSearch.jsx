@@ -181,14 +181,20 @@ const FavSearch = () => {
           </ul>
         </div>
         <div className="col-sm-12 col-md-6 item-list">
-          <h3>Your fav list</h3>
-          <ul>
+          <h3 className="list-group-item-heading">Your fav list</h3>
+          <ul className="list-group">
             {items.map((item) => (
-              <li key={item.trackId}>
-                <a href={item.trackViewUrl} target="_blank" rel="noreferrer">
-                  {item.trackName} by {item.artistName}
-                </a>
-                <p>Media Kind: {item.kind}</p>
+              <li className="list-group-item mt-1" key={item.trackId}>
+                <h5>
+                  <a href={item.trackViewUrl} target="_blank" rel="noreferrer">
+                    {item.trackName} by {item.artistName}
+                  </a>
+                </h5>
+
+                <p className="list-group-item-text">
+                  <strong>Media Kind: </strong>
+                  {item.kind}
+                </p>
                 {item.longDescription && (
                   <>
                     <Button
@@ -214,7 +220,9 @@ const FavSearch = () => {
                   </>
                 )}
 
-                <p>Released: {item.releaseDate.substring(0, 10)}</p>
+                <p className="mt-2">
+                  <strong>Released:</strong> {item.releaseDate.substring(0, 10)}
+                </p>
                 {token_storage && (
                   <RemoveFav item={item} handleRemoveItem={handleRemoveItem} />
                 )}
