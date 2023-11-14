@@ -19,7 +19,7 @@ const Home = () => {
         {/* Learned from
         Accessibility Meaningful &amp; Decorative Images (no date) Accessibility Meaningful and Decorative Images. 
         Available at: https://www.w3schools.com/accessibility/accessibility_meaningful_images.php (Accessed: 13 November 2023).  */}
-        <img src="../../../public/music_images/music4.jpg" alt="" />
+        <img src="/music_images/music4.jpg" alt="" />
       </div>
 
       <p>
@@ -29,7 +29,7 @@ const Home = () => {
         <Link to="/search-album">albums</Link> you are interest in.
       </p>
       <div className="lowerImage d-flex justify-content-center">
-        <img src="../../../public/music_images/recordPlayer3.jpg" alt="" />
+        <img src="/music_images/recordPlayer3.jpg" alt="" />
       </div>
 
       <>
@@ -48,10 +48,7 @@ const Home = () => {
               voluptates dolorem?
             </p>
             <div className="lowerImage d-flex justify-content-center">
-              <img
-                src="../../../public/music_images/recordPlayer4.jpg"
-                alt=""
-              />
+              <img src="/music_images/recordPlayer4.jpg" alt="" />
             </div>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi

@@ -129,7 +129,7 @@ const AlbumSearch = () => {
         </div>
       </div>
       <div className="lowerImage d-flex justify-content-center">
-        <img src="../../../public/music_images/recordPlayer1.jpg" alt="" />
+        <img src="/music_images/recordPlayer1.jpg" alt="" />
       </div>
     </div>
   );
