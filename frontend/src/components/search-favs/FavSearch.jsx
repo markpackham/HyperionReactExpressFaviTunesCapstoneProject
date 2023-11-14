@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-import { Button, Modal } from "react-bootstrap";
 import axios from "axios";
 import DOMPurify from "dompurify";
 import Swal from "sweetalert2";
@@ -9,7 +8,6 @@ import { iTunesUrlPath } from "../../global";
 import { urlPath } from "../../global";
 import AddFav from "./AddFav";
 import DropdownSelect from "./DropdownSelect";
-import RemoveFav from "./RemoveFav";
 import FavItem from "./FavItem";
 
 const FavSearch = () => {
@@ -159,7 +157,7 @@ const FavSearch = () => {
           <h3 className="list-group-item-heading">Your fav list</h3>
           <ul className="list-group">
             {items.map((item) => (
-              <FavItem item={item} />
+              <FavItem item={item} key={item.trackId} />
             ))}
           </ul>
         </div>
