@@ -102,6 +102,10 @@ nav ul li a:hover {
   background-color: var(--card-bg-color);
 }
 
+#nav-section ul li {
+  margin: 0px;
+}
+
 /* Classes */
 .item-list ul li {
   padding: 6px;
@@ -129,10 +133,6 @@ nav ul li a:hover {
 @media screen and (max-width: 991px) {
   nav ul {
     margin: auto;
-  }
-
-  nav ul li {
-    margin: 0.4rem;
   }
 
   #nav-section {
