@@ -186,7 +186,7 @@ const FavSearch = () => {
         </div>
         <div className="col-sm-12 col-md-6 item-list">
           <h3 className="list-group-item-heading">
-            Your fav list <i className="fa-solid fa-star"></i>
+            Your fav media list <i className="fa-solid fa-star"></i>
           </h3>
           <ul className="list-group">
             {items.map((item) => (
