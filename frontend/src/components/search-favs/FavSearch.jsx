@@ -27,6 +27,7 @@ const FavSearch = () => {
     { value: "ebook", label: "Ebook" },
     { value: "music", label: "Music" },
     { value: "movie", label: "Movie" },
+    { value: "podcast", label: "Podcast" },
   ];
 
   // Search Results
