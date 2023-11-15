@@ -94,10 +94,6 @@ nav ul li a:hover {
 }
 
 /* Ids */
-#logo {
-  width: 100px;
-}
-
 #nav-section {
   background-color: var(--card-bg-color);
 }
