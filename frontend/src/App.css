@@ -1,9 +1,15 @@
 :root {
+  --anchor-color-main: hsl(300, 71%, 27%);
   --background-color-main: hsl(60, 15%, 88%);
   --box-shadow-main: 7px 4px 4px hsl(0, 1%, 48%);
   --box-shadow-secondary: 4px 3px 3px hsl(0, 1%, 48%);
   --card-bg-color: hsl(60, 45%, 78%);
   --card-bg-color-secondary: hsl(60, 59%, 75%);
+  --card-bg-color-tertiary: hsl(60, 75%, 62%);
+}
+
+a {
+  color: var(--anchor-color-main);
 }
 
 a:hover {
@@ -49,6 +55,11 @@ h6 {
   text-align: center;
 }
 
+.h5,
+h5 {
+  font-size: 1.23rem;
+}
+
 img {
   border-radius: 10px;
   box-shadow: var(--box-shadow-secondary);
@@ -86,6 +97,14 @@ nav ul li a:hover {
 /* Classes */
 .item-list ul li {
   padding: 6px;
+}
+
+.list-group {
+  box-shadow: var(--box-shadow-secondary);
+}
+
+.list-group-item {
+  background-color: var(--card-bg-color-tertiary);
 }
 
 .lowerImage {

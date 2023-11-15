@@ -10,7 +10,7 @@ const FavItem = ({ item, handleRemoveItem }) => {
   const token_storage = sessionStorage.getItem("jwt_token");
 
   return (
-    <li className="list-group-item mt-1">
+    <li className="list-group-item">
       <h5>
         <a href={item.trackViewUrl} target="_blank" rel="noreferrer">
           {item.trackName} by {item.artistName}
@@ -20,6 +20,10 @@ const FavItem = ({ item, handleRemoveItem }) => {
       <p className="list-group-item-text">
         <strong>Media Kind: </strong>
         {item.kind}
+      </p>
+
+      <p>
+        <strong>Released:</strong> {item.releaseDate.substring(0, 10)}
       </p>
       {/* Modal for very long movie descriptions */}
       {item.longDescription && (
@@ -43,10 +47,6 @@ const FavItem = ({ item, handleRemoveItem }) => {
           </Modal>
         </>
       )}
-
-      <p className="mt-2">
-        <strong>Released:</strong> {item.releaseDate.substring(0, 10)}
-      </p>
       {token_storage && (
         <RemoveFav item={item} handleRemoveItem={handleRemoveItem} />
       )}
