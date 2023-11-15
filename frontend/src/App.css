@@ -5,7 +5,7 @@
   --box-shadow-secondary: 4px 3px 3px hsl(0, 1%, 48%);
   --card-bg-color: hsl(60, 45%, 78%);
   --card-bg-color-secondary: hsl(60, 59%, 75%);
-  --card-bg-color-tertiary: hsl(60, 75%, 62%);
+  --card-bg-color-tertiary: hsl(60, 56%, 69%);
 }
 
 a {
@@ -111,7 +111,8 @@ nav ul li a:hover {
   box-shadow: var(--box-shadow-secondary);
 }
 
-.list-group-item {
+.list-group-item,
+.modal-body {
   background-color: var(--card-bg-color-tertiary);
 }
 

@@ -12,8 +12,8 @@ const AlbumItem = ({ album }) => {
         <div>
           <h5 className="p-2">{album.albumName}</h5>
           <p className="p-2">
-            &nbsp;by {album.artistName} | Released on{" "}
-            {album.releaseDate.substring(0, 10)}
+            &nbsp;by <strong>{album.artistName}</strong> | Released on{" "}
+            <strong>{album.releaseDate.substring(0, 10)}</strong>
           </p>
         </div>
       </div>

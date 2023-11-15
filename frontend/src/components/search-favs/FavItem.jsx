@@ -18,12 +18,11 @@ const FavItem = ({ item, handleRemoveItem }) => {
       </h5>
 
       <p className="list-group-item-text">
-        <strong>Media Kind: </strong>
-        {item.kind}
+        Media Kind: <strong>{item.kind}</strong>
       </p>
 
       <p>
-        <strong>Released:</strong> {item.releaseDate.substring(0, 10)}
+        Released: <strong>{item.releaseDate.substring(0, 10)}</strong>
       </p>
       {/* Modal for very long movie descriptions */}
       {item.longDescription && (
