@@ -63,7 +63,7 @@ npm start
 #### Alternative install & run method
 Front the root directory if you prefer to run bash scripts
 ```
-./start.sh
+./startFrontAndBack.sh
 ```
 
 

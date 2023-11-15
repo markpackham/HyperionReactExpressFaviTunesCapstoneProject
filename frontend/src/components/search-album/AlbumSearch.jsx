@@ -31,10 +31,13 @@ const AlbumSearch = () => {
         .post(`${albumUrlPath}`, {
           albumName: DOMPurify.sanitize(
             // Replaces spaces with +
-            formik.values.albumName.split(" ").join("+")
+            formik.values.albumName.trim().split(" ").join("+")
           ),
+          // Learned trim to remove surrounding whitespace from
+          // MozDevNet (no date) String.prototype.trim() - javascript: MDN, MDN Web Docs.
+          // Available at: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/trim (Accessed: 15 November 2023).
           artistName: DOMPurify.sanitize(
-            formik.values.artistName.split(" ").join("+")
+            formik.values.artistName.trim().split(" ").join("+")
           ),
         })
         .then((res) => {
