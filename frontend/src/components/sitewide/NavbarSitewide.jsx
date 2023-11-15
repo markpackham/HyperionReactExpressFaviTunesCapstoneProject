@@ -28,7 +28,7 @@ const NavbarSitewide = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/">
+              <Link className="nav-link" to="/contact">
                 Contact <i className="fa-solid fa-address-book"></i>
               </Link>
             </li>

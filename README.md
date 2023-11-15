@@ -54,12 +54,16 @@ Frontend and Backend code is kept apart to make it easier to understand
 cd backend
 npm start
 ```
+Unless you change the .env file in backend folder it will run off
+http://localhost:8080/
 
 #### Second from within this directory start the React frontend
 ```
 cd frontend
 npm start
 ```
+This typically defaults to
+http://localhost:5173/
 
 #### Alternative install & run method
 Front the root directory if you prefer to run bash scripts

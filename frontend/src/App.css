@@ -55,6 +55,10 @@ h6 {
   text-align: center;
 }
 
+h4 a:hover {
+  font-weight: 750;
+}
+
 .h5,
 h5 {
   font-size: 1.23rem;
