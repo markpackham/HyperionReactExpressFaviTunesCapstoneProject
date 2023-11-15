@@ -68,7 +68,10 @@ const NavbarSitewide = () => {
 
                 <li id="navUsername" className="nav-item">
                   <span className="nav-link">
-                    <strong>Username:</strong> {userName}
+                    <strong>
+                      Username <i className="fa-solid fa-user"></i>&nbsp;
+                    </strong>{" "}
+                    {userName}
                   </span>
                 </li>
               </>
