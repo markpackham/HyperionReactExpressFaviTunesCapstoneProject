@@ -3,7 +3,7 @@ const FooterSitewide = () => {
 
   return (
     <footer className="sticky-bottom">
-      <p className="fst-italic">
+      <p id="footerCopyright" className="fst-italic">
         Copyright Mark Packham {currentYear.getFullYear()}
       </p>
     </footer>
