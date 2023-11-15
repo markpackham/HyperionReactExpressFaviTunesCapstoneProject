@@ -28,6 +28,11 @@ const NavbarSitewide = () => {
               </Link>
             </li>
             <li className="nav-item">
+              <Link className="nav-link" to="/">
+                Contact <i className="fa-solid fa-address-book"></i>
+              </Link>
+            </li>
+            <li className="nav-item">
               <Link className="nav-link" to="/search">
                 Media Search <i className="fa-solid fa-book"></i>
               </Link>
