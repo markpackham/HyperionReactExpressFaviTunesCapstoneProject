@@ -21,6 +21,7 @@ const FavItem = ({ item, handleRemoveItem }) => {
         <strong>Media Kind: </strong>
         {item.kind}
       </p>
+      {/* Modal for very long movie descriptions */}
       {item.longDescription && (
         <>
           <Button variant="primary" onClick={() => setShowMoreInfo(true)}>

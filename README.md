@@ -2,20 +2,20 @@
 
 It includes the following:
 
-- Axios is used for React to fetch data from Express
-- Bootstrap is used for modals and styling and included via the React Bootstrap UI library
+- Axios is used for Express to fetch data from the iTunes Search API and for React to fetch data from Express and the iTunes Search Api
+- Bootstrap is used for modals and styling alongside the React Bootstrap UI library
 - Concurrently so a simple "npm start" will install all modules and run the app at the same time
 - Cors is added to prevent issues with both frontend and backend running locally
 - Dotenv is used to store sensitive values to access the online database
 - DOMPurify is used to remove malicious code injections when dealing with forms
-- Express to run as the backend server
+- Express is there to run as the backend server & deal with middleware
 - Formik for form validation feedback
 - Jsonwebtoken to identify users and their access rights
-- MongoDB to store users, jwt tokens and items add by users to the fav media list
+- MongoDB to store users, jwt tokens and fav media items add by users to the fav media list
 - Mongoose to connect to Mongo DB
 - Nodemon to save the dev from having to constantly restart the server after changes
 - React is used for the frontend created via Vite
-- React Redux is used so the username can be seen sitewide in the navbar when a person logs in
+- React Redux is used so the username can be seen sitewide in the navbar when a person logs in & future state management purposes
 - React Router Dom for site navigation
 - Sweetalert2 for better looking alert messages
 - Yup for form validation checks
@@ -23,7 +23,8 @@ It includes the following:
 
 ## App Purpose
 
-A full-stack web application using React and Express that interfaces with the iTunes Search API.
+A full-stack web application using React, MongoDB and Express that interfaces with the iTunes Search API.
+https://developer.apple.com/library/archive/documentation/AudioVideo/Conceptual/iTuneSearchAPI/index.html
 
 
 ## Requirements
@@ -35,7 +36,6 @@ If I haven't provided you with the .env file that has access to my database & yo
 const uri = `mongodb+srv://graveofmine99:${password}@hyperiondevlearning.dpl6f6p.mongodb.net/?retryWrites=true&w=majority`;
 ``` 
 in the backend/server.js file and make sure you have 2 collections called "users" and "favs".
-
 
 
 ## Check node version
@@ -60,6 +60,13 @@ cd frontend
 npm start
 ```
 
+#### Alternative install & run method
+Front the root directory if you prefer to run bash scripts
+```
+./start.sh
+```
+
+
 ### Usage
 
 1) Go to the Register page in the React App with a gmail address for a username and a password meeting the criteria below.
@@ -71,7 +78,9 @@ A jwt token gets store in the MongoDB Database.
 2) Use the same username and password to login in the Login page.
 
 3) You can now add your favorite media to lists or delete them from those lists in the Media Search section.
-The data is fetched from iTunes' API as you search it.
+The data is fetched from iTunes Search API as you search it.
+
+It is possible to view the fav lists when logged out, only create and delete operations are secured with jwt tokens.
 
 4) If you do not want to bother logging in you can search for albums and get more info on them in the Album Info section.
 

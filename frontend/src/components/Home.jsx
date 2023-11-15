@@ -11,7 +11,7 @@ const Home = () => {
       <p>
         To fully use this site please make sure that you have first{" "}
         <Link to="/register">registered</Link> and then{" "}
-        <Link to="/login">login</Link> to use this site.
+        <Link to="/login">logged in</Link>.
       </p>
 
       <div className="lowerImage d-flex justify-content-center">
