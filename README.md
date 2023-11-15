@@ -10,6 +10,7 @@ It includes the following:
 - DOMPurify is used to remove malicious code injections when dealing with forms
 - Express is there to run as the backend server & deal with middleware
 - Formik for form validation feedback
+- Helmet as middleware in Express to mitigate cross-site scripting attacks
 - Jsonwebtoken to identify users and their access rights
 - MongoDB to store users, jwt tokens and fav media items add by users to the fav media list
 - Mongoose to connect to Mongo DB

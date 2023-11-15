@@ -10,7 +10,7 @@ const FavItem = ({ item, handleRemoveItem }) => {
   const token_storage = sessionStorage.getItem("jwt_token");
 
   return (
-    <li className="list-group-item">
+    <li className="list-group-item mb-1">
       <h5>
         <a href={item.trackViewUrl} target="_blank" rel="noreferrer">
           {item.trackName} by {item.artistName}

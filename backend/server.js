@@ -8,6 +8,10 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
+// Use helmet to mitigate cross-site scripting attacks, learned from
+// Helmet (no date) npm.
+// Available at: https://www.npmjs.com/package/helmet#content-security-policy (Accessed: 15 November 2023).
+const helmet = require("helmet");
 
 // Import routes
 const addDeleteFavs = require("./routes/secure/addDeleteFavs");
@@ -16,9 +20,14 @@ const getFavs = require("./routes/getFavs");
 const login = require("./routes/login");
 const register = require("./routes/register");
 
-// Initialize middleware
 const app = express();
+
+// Initialize middleware
 app.use(cors());
+// Allow app to accept json and url encoded values
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(helmet());
 
 // Global error handler middleware
 // ensures that server doesn't crash on unhandled exceptions
@@ -41,10 +50,6 @@ mongoose.connect(uri, { useNewUrlParser: true }).then(
     console.log("Could not connect to the database..." + err);
   }
 );
-
-// Allow app to accept json and url encoded values
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json());
 
 // Set up routes to be handled from: http://localhost:8080/favs
 app.use("/favs", getAlbumInfo);
