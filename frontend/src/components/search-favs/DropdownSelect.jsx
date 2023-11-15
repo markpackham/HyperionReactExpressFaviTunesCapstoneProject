@@ -27,6 +27,9 @@ const DropdownSelect = ({ options, value, onChange }) => {
         <ul className="dropdown-list">
           {options.map((option) => (
             <li key={option.value}>
+              {/* Learn to work with radio buttons in React from
+              Collegewap (2023) How to work with radio buttons in react, DEV Community. 
+              Available at: https://dev.to/collegewap/how-to-work-with-radio-buttons-in-react-3e0o (Accessed: 15 November 2023).  */}
               <input
                 type="radio"
                 id={option.value}
