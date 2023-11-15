@@ -41,7 +41,7 @@ const Register = () => {
         password: DOMPurify.sanitize(password),
       };
 
-      // Send Post to Express
+      // Send POST to Express
       axios({
         method: "POST",
         url: `${urlPath}register`,

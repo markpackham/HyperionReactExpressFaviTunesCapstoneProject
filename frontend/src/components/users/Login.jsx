@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useFormik } from "formik";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import * as Yup from "yup";
 import axios from "axios";
@@ -76,7 +76,8 @@ const Login = () => {
 
       {token_storage && (
         <h4 className="text-success mt-4 mb-4">
-          Congrats, you are logged in and can add music & books to your favs.
+          Congrats, you are logged in and can <Link target="/search"> add</Link>{" "}
+          music, movies & books to your favs list.
         </h4>
       )}
       <p>
@@ -95,6 +96,7 @@ const Login = () => {
           {...formik.getFieldProps("username")}
         />
 
+        {/* Will show if there are user errors in form entry */}
         {formik.touched.username && formik.errors.username ? (
           <div className="fw-bold text-danger mb-1">
             {formik.errors.username}

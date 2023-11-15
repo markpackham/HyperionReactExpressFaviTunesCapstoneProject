@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-// User gained via login or register
+// Username gained via login
 const initialState = {
   userName: "",
 };
