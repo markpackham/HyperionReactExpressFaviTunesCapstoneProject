@@ -147,14 +147,12 @@ const FavSearch = () => {
     <div>
       <h1>Fav Media Search</h1>
       <hr />
-
       {!token_storage && (
         <h3>
           Please <Link to="/login">login</Link> to add your fav media to your
           fav list!
         </h3>
       )}
-
       <div className="form-group col-sm-12 col-md-6">
         <input
           type="text"
@@ -165,9 +163,10 @@ const FavSearch = () => {
         />
       </div>
       <p className="mt-2">
-        <strong>Media Item Category</strong> click on the button to change
+        <strong>Media Item Category</strong> click on the button to change the
         category!
       </p>
+      {/* Radio button category selection */}
       <DropdownSelect
         options={mediaOptions}
         value={media}
