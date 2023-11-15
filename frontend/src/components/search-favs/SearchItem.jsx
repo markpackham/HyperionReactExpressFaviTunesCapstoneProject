@@ -4,32 +4,37 @@ import AddFav from "./AddFav";
 
 const SearchItem = ({ searchResults, token_storage, handleAddItem }) => {
   return (
-    <table className="table table-striped">
-      <thead>
-        <tr>
-          <th>Content Name</th>
-          <th>Artist Name</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        {searchResults.map((result) => (
-          <tr key={result.trackId}>
-            <td>
-              <a href={result.trackViewUrl} target="_blank" rel="noreferrer">
-                {result.trackName}
-              </a>
-            </td>
-            <td>{result.artistName}</td>
-            <td>
-              {token_storage && (
-                <AddFav item={result} handleAddItem={handleAddItem} />
-              )}
-            </td>
+    <>
+      <h3 className="list-group-item-heading">
+        Searches <i className="fa-solid fa-binoculars"></i>
+      </h3>
+      <table className="table table-striped">
+        <thead>
+          <tr>
+            <th>Content Name</th>
+            <th>Artist Name</th>
+            <th></th>
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+          {searchResults.map((result) => (
+            <tr key={result.trackId}>
+              <td>
+                <a href={result.trackViewUrl} target="_blank" rel="noreferrer">
+                  {result.trackName}
+                </a>
+              </td>
+              <td>{result.artistName}</td>
+              <td>
+                {token_storage && (
+                  <AddFav item={result} handleAddItem={handleAddItem} />
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
   );
 };
 
