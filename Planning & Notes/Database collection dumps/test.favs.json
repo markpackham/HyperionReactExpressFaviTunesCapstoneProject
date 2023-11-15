@@ -1,0 +1,75 @@
+[{
+  "_id": {
+    "$oid": "65535e64f5bc6874c486a3bb"
+  },
+  "trackId": 688844810,
+  "trackName": "Iron Man 2",
+  "artistName": "Jon Favreau",
+  "kind": "feature-movie",
+  "trackViewUrl": "https://itunes.apple.com/us/movie/iron-man-2/id688844810?uo=4",
+  "longDescription": "Robert Downey Jr. returns as Tony Stark, the wealthy playboy whose exploits as Iron Man are now public knowledge after his admission at the close of the first film. in the follow-up, Stark is pitted against his Russian arch nemesis, Whiplash (Mickey Rourke), and corporate rival Justin Hammer (Sam Rockwell).",
+  "releaseDate": "2010-05-07T07:00:00Z",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65535e7ff5bc6874c486a3be"
+  },
+  "trackId": 1602694961,
+  "trackName": "The Hobbit",
+  "artistName": "J. R. R. Tolkien",
+  "kind": "ebook",
+  "trackViewUrl": "https://books.apple.com/us/book/the-hobbit/id1602694961?uo=4",
+  "releaseDate": "2012-02-15T08:00:00Z",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65535e9cf5bc6874c486a3c1"
+  },
+  "trackId": 1147165819,
+  "trackName": "The Prisoner (2015 Remaster)",
+  "artistName": "Iron Maiden",
+  "kind": "song",
+  "trackViewUrl": "https://music.apple.com/us/album/the-prisoner-2015-remaster/1147165685?i=1147165819&uo=4",
+  "releaseDate": "1982-03-22T08:00:00Z",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655365cdf5bc6874c486a3ef"
+  },
+  "trackId": 192846080,
+  "trackName": "Pirates of the Caribbean: Dead Man's Chest",
+  "artistName": "Gore Verbinski",
+  "kind": "feature-movie",
+  "trackViewUrl": "https://itunes.apple.com/us/movie/pirates-of-the-caribbean-dead-mans-chest/id192846080?uo=4",
+  "longDescription": "Charming rogue pirate Captain Jack Sparrow (Johnny Depp) is back for a grand, swashbuckling, nonstop joyride filled with devilish pirate humor, monstrous sea creatures, and breathtaking black magic. Now Jack's got a blood debt to pay -- he owes his soul to the legendary Davy Jones, ghostly Ruler of the Ocean Depths ... but ever-crafty Jack isn't about to go down without a fight. Along the way, dashing Will Turner (Orlando Bloom) and the beautiful Elizabeth Swann (Keira Knightley) get caught up in the thrilling whirlpool of misadventures stirred up in Jack's quest to avoid eternal damnation by seizing the fabled Dead Man's Chest!",
+  "releaseDate": "2006-07-07T07:00:00Z",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65539337b7d88be514f81cd5"
+  },
+  "trackId": 726371508,
+  "trackName": "Aqualung",
+  "artistName": "Jethro Tull",
+  "kind": "song",
+  "trackViewUrl": "https://music.apple.com/us/album/aqualung/726371044?i=726371508&uo=4",
+  "releaseDate": "1971-03-19T08:00:00Z",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655487c5de48caae75dbecc8"
+  },
+  "trackId": 1164294784,
+  "trackName": "Doctor Strange (2016)",
+  "artistName": "Scott Derrickson",
+  "kind": "feature-movie",
+  "trackViewUrl": "https://itunes.apple.com/us/movie/doctor-strange-2016/id1164294784?uo=4",
+  "longDescription": "From Marvel comes Doctor Strange, the story of world-famous neurosurgeon Dr. Stephen Strange, whose life changes forever after a horrific car accident robs him of the use of his hands. When traditional medicine fails him, he is forced to look for healing, and hope, in an unlikely place – a mysterious enclave known as Kamar-Taj. He quickly learns that this is not just a center for healing but also the front line of a battle against unseen dark forces bent on destroying our reality. Before long Strange – armed with newly acquired magical powers – is forced to choose whether to return to his old life or leave it all behind to defend the world as the most powerful sorcerer in existence.",
+  "releaseDate": "2016-11-04T07:00:00Z",
+  "__v": 0
+}]
