@@ -42,14 +42,16 @@ const PORT = process.env.PORT || 8080;
 const uri = `mongodb+srv://graveofmine99:${password}@hyperiondevlearning.dpl6f6p.mongodb.net/?retryWrites=true&w=majority`;
 
 // Connect to db
-mongoose.connect(uri, { useNewUrlParser: true }).then(
-  () => {
+connectToDatabase = async () => {
+  try {
+    await mongoose.connect(uri, { useNewUrlParser: true });
     console.log("Successfully connected to the database!");
-  },
-  (err) => {
+  } catch (err) {
     console.log("Could not connect to the database..." + err);
   }
-);
+};
+
+connectToDatabase();
 
 // Set up routes to be handled from: http://localhost:8080/favs
 app.use("/favs", getAlbumInfo);
