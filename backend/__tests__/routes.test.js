@@ -9,3 +9,10 @@ describe("Express server GET favs check", () => {
     expect(res.status).toBe(200);
   });
 });
+
+describe("Express server GET 404 check", () => {
+  it("should get a 404 response when going to root route that does not exist http://localhost:8080/", async () => {
+    const res = await request("http://localhost:8080").get("/");
+    expect(res.status).toBe(404);
+  });
+});
