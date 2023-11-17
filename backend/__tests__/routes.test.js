@@ -4,6 +4,9 @@ const request = require("supertest");
 // Gao, A. (2022) How to test express.js with jest and Supertest, Through the binary.
 // Available at: https://www.albertgao.xyz/2017/05/24/how-to-test-expressjs-with-jest-and-supertest/ (Accessed: 17 November 2023).
 
+// To test routes first make sure backend server running "npm start"
+// Then run tests via jest "npm test"
+
 // Album Search
 describe("POST album success check", () => {
   it("should get a 200 response when searching for an album", async () => {

@@ -79,6 +79,17 @@ Front the root directory if you prefer to run bash scripts
 ./startFrontAndBack.sh
 ```
 
+#### Express Testing
+To test the backend server via jest enter its directory & have it run via
+```
+cd backend
+npm start
+```
+Then from that directory run
+```
+npm test
+```
+
 
 ### Usage
 
