@@ -14,6 +14,15 @@ describe("POST album success check", () => {
   });
 });
 
+describe("POST album wrong route request check", () => {
+  it("should get a 404 response when attempting a delete on album info", async () => {
+    const res = await request("http://localhost:8080").delete(
+      "/favs/album-info?albumName=Greatest+Hits&artistName=Creed"
+    );
+    expect(res.status).toBe(404);
+  });
+});
+
 // Favs
 describe("GET favs success check", () => {
   it("should get a 200 response when going to http://localhost:8080/favs", async () => {
