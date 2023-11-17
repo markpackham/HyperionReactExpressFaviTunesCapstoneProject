@@ -15,4 +15,13 @@
   "password": "$2b$13$lNE6vQ2Qh7CAQhud5i/RrOirUW/YgO9budq1jXqJNeHuxjyozRMxW",
   "user_jwt": "eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiamltNzc4OFpAZ21haWwuY29tIn0._dNI74e4-_cjMNvzV13l4MDIKn-DtTtBLeRtFuvO7s4",
   "__v": 0
+},
+{
+  "_id": {
+    "$oid": "655795e79828f7562657f133"
+  },
+  "username": "samBob8899@gmail.com",
+  "password": "$2b$13$XbEY0d0Auej5IRoBl0gzGuSVPcmKMByeBA.thEhU.wa/reVMS8oKq",
+  "user_jwt": "eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoic2FtQm9iODg5OUBnbWFpbC5jb20ifQ.1wMp2MdJXZV95FD9Q72HsMpo-byLE4xrFSE6C5pFtuk",
+  "__v": 0
 }]
