@@ -4,17 +4,31 @@ const dotenv = require("dotenv");
 dotenv.config();
 const jwt_key = process.env.JWT_KEY;
 
+// Learned about bcrypt to hash my database passwords from
+// Hashing passwords in node and express using bcrypt (2022) YouTube.
+// Available at: https://www.youtube.com/watch?app=desktop&amp;v=AzA_LTDoFqY (Accessed: 17 November 2023).
+const bcrypt = require("bcrypt");
+const bcryptSalt = bcrypt.genSaltSync(13);
+
 // LOGIN
-exports.login = (req, res) => {
+exports.login = async (req, res) => {
   const { username, password } = req.body;
-  console.log(username);
 
   // See if user exists in DB if so send a jwt
-  User.findOne({ username: username, password: password })
-    .then((user) => {
+  User.findOne({
+    username: username,
+  })
+    .then(async (user) => {
       if (!user) {
         return res.send("Incorrect user credentials");
       }
+
+      // Check for valid password
+      const isPasswordValid = await bcrypt.compare(password, user.password);
+      if (!isPasswordValid) {
+        return res.send("Incorrect user credentials");
+      }
+
       const payload = {
         name: username,
       };
@@ -48,7 +62,7 @@ exports.register = async (req, res) => {
   try {
     const userModel = new User({
       username: req.body.username,
-      password: req.body.password,
+      password: await bcrypt.hash(req.body.password, bcryptSalt),
       user_jwt: token,
     });
 
@@ -60,7 +74,7 @@ exports.register = async (req, res) => {
     // Error response
     console.error(error);
     res.status(500).send({
-      message: "Some error occurred while creating the todo.",
+      message: "Some error occurred while creating the user.",
     });
   }
 };

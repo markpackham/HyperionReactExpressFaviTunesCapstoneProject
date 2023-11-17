@@ -4,7 +4,7 @@ It includes the following:
 
 - Axios is used for Express to fetch data from the iTunes Search API and for React to fetch data from Express and the iTunes Search Api
 - Bootstrap is used for modals and styling alongside the React Bootstrap UI library
-- Bcrypt - for future implementation, I want to use it to hash my database passwords
+- Bcrypt - use to hash my passwords in my database
 - Concurrently so a simple "npm start" will install all modules and run the app at the same time
 - Cors is added to prevent issues with both frontend and backend running locally
 - Dotenv is used to store sensitive values to access the online database
