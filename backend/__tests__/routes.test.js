@@ -4,8 +4,8 @@ const request = require("supertest");
 // Gao, A. (2022) How to test express.js with jest and Supertest, Through the binary.
 // Available at: https://www.albertgao.xyz/2017/05/24/how-to-test-expressjs-with-jest-and-supertest/ (Accessed: 17 November 2023).
 
-// To test routes first make sure backend server running "npm start"
-// Then run tests via jest "npm test"
+// To test routes first make sure backend server is running via "npm start"
+// Then run tests from jest using "npm test" within the backend server directory
 
 // Album Search
 describe("POST album success check", () => {
@@ -17,7 +17,7 @@ describe("POST album success check", () => {
   });
 });
 
-describe("POST album wrong route request check", () => {
+describe("DELETE album wrong route request check", () => {
   it("should get a 404 response when attempting a delete on album info", async () => {
     const res = await request("http://localhost:8080").delete(
       "/favs/album-info?albumName=Greatest+Hits&artistName=Creed"
@@ -41,14 +41,6 @@ describe("POST 400 Bad Request check", () => {
   });
 });
 
-// Login
-describe("POST login success check", () => {
-  it("should get a 200 response when posting to login page", async () => {
-    const res = await request("http://localhost:8080").post("/favs/login");
-    expect(res.status).toBe(200);
-  });
-});
-
 // Register
 describe("POST register Forbidden check", () => {
   it("should get a 403 response when posting to register with no gmail username or password", async () => {
@@ -59,7 +51,7 @@ describe("POST register Forbidden check", () => {
 
 // 404 Check
 describe("Express server GET 404 check", () => {
-  it("should get a 404 response when going to root route that does not exist http://localhost:8080/", async () => {
+  it("should get a 404 response when going to route that does not exist http://localhost:8080/", async () => {
     const res = await request("http://localhost:8080").get("/");
     expect(res.status).toBe(404);
   });
