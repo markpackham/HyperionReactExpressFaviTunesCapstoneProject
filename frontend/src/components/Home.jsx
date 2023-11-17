@@ -4,15 +4,18 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   const [show, setShowMoreInfo] = useState(false);
+  const token_storage = sessionStorage.getItem("jwt_token");
 
   return (
     <>
       <h2>Store All Your Fav Music, Movies & Books Right Here!</h2>
-      <p>
-        To fully use this site please make sure that you have first{" "}
-        <Link to="/register">registered</Link> and then{" "}
-        <Link to="/login">logged in</Link>.
-      </p>
+      {!token_storage && (
+        <p>
+          To fully use this site please make sure that you have first{" "}
+          <Link to="/register">registered</Link> and then{" "}
+          <Link to="/login">logged in</Link>.
+        </p>
+      )}
 
       <div className="lowerImage d-flex justify-content-center">
         {/* Image is purely decorative so alt="" means a screen reader will ignore it */}
