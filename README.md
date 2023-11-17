@@ -22,6 +22,13 @@ It includes the following:
 - Sweetalert2 for better looking alert messages
 - Yup for form validation checks
 
+The following was added for unit testing in Express
+- babel-cli
+- babel-preset-env
+- jest
+- superagent
+- supertest
+
 
 ## App Purpose
 
