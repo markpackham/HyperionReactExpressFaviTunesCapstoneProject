@@ -1,0 +1,28 @@
+Scores
+Completeness: 2/4
+Efficiency: 4/4
+Style: 4/4
+Documentation: 4/4
+
+Positive aspects of the submission
+Great work so far, Mark! 👏
+
+✅ You have successfully implemented most of the requirements for this task.
+
+⚡️ Your code demonstrates good efficiency. The asynchronous nature of the code is well-handled, especially in the albumInfo and create functions, where you use async/await for asynchronous operations. The use of axios for making HTTP requests is appropriate, and error handling is implemented effectively.
+
+💯 Your code follows a clean and consistent coding style. Variable and function names are descriptive, making the code easy to understand. The indentation and spacing are consistent throughout the codebase. The separation of concerns between different functions and modules is well-maintained, contributing to the overall readability of the code. Additionally, you have made excellent use of pre-styled components from multiple libraries, which has resulted in a very user-friendly and visually appealing web application.
+
+📝 Your code includes comments that provide helpful explanations, such as comments explaining the purpose of certain code blocks, the use of external modules, and the logic behind certain decisions. Additionally, you have provided a neat, in-depth and professional readme file.
+
+Aspects of the submission that could be improved
+Unfortunately, you have not yet attempted to implement the following requirement:
+
+➡️ You should ensure that your application has been appropriately tested and is free from errors or bugs. It's recommended to try using unit testing to help with this process.
+
+💡 Consider implementing a test to see whether your backend server is running (status code 200 return) or not (fail).
+
+Implementing unit tests into your web applications will improve their overall maintainability. They help also ensure that future changes don't break existing functionality, and that your code is performing expected behaviour.
+
+Overall feedback
+Please make these corrections and resubmit, and we will gladly take another look. You got this! :) Please remember that you can always book a mentor session if you would like some guidance on how to complete the requirements for this task. We would be more than happy to help!
