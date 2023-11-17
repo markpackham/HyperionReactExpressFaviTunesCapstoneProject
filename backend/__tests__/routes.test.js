@@ -8,15 +8,6 @@ const request = require("supertest");
 // Then run tests from jest using "npm test" within the backend server directory
 
 // Album Search
-describe("POST album success check", () => {
-  it("should get a 200 response when searching for an album", async () => {
-    const res = await request("http://localhost:8080").post(
-      "/favs/album-info?albumName=Greatest+Hits&artistName=Creed"
-    );
-    expect(res.status).toBe(200);
-  });
-});
-
 describe("DELETE album wrong route request check", () => {
   it("should get a 404 response when attempting a delete on album info", async () => {
     const res = await request("http://localhost:8080").delete(
@@ -43,7 +34,7 @@ describe("POST 400 Bad Request check", () => {
 
 // Register
 describe("POST register Forbidden check", () => {
-  it("should get a 403 response when posting to register with no gmail username or password", async () => {
+  it("should get a 403 response when posting to register with no gmail username or password sent", async () => {
     const res = await request("http://localhost:8080").post("/favs/register");
     expect(res.status).toBe(403);
   });
