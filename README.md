@@ -58,7 +58,7 @@ node --version
 
 Frontend and Backend code is kept apart to make it easier to understand
 
-#### First from within this backend directory install the node modules start the Express backend
+#### First from within this backend directory install the node modules then start the Express backend
 ```
 cd backend
 npm i
