@@ -42,7 +42,14 @@ const AlbumSearch = () => {
         })
         .then((res) => {
           if (res.status === 200) {
-            console.log(res.data);
+            // See if album cannot be found
+            if (res.data.length === 0) {
+              Swal.fire({
+                title: "Album does not exist in iTunes",
+                text: res.data,
+                icon: "error",
+              });
+            }
             setAlbums(res.data);
           } else {
             Swal.fire({
