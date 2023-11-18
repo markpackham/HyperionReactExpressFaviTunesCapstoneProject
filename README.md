@@ -76,6 +76,7 @@ npm start
 This typically defaults to
 http://localhost:5173/
 
+Always have the Express backend running in the background if you want to also run the React frontend.
 
 
 #### Express Testing
