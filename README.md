@@ -46,6 +46,8 @@ const uri = `mongodb+srv://graveofmine99:${password}@hyperiondevlearning.dpl6f6p
 ``` 
 in the backend/server.js file and make sure you have 2 collections called "users" and "favs".
 
+The code has been tested on Windows 11 using the browsers Brave, Micorsoft Edge and LibreWolf.
+
 
 ## Check node version
 
@@ -57,27 +59,25 @@ node --version
 
 Frontend and Backend code is kept apart to make it easier to understand
 
-#### First from within this directory start the Express backend
+#### First from within this backend directory install the node modules start the Express backend
 ```
 cd backend
+npm i
 npm start
 ```
 Unless you change the .env file in backend folder it will run off
 http://localhost:8080/
 
-#### Second from within this directory start the React frontend
+#### Second from within the frontend directory install the node modules then start the React frontend
 ```
 cd frontend
+npm i
 npm start
 ```
 This typically defaults to
 http://localhost:5173/
 
-#### Alternative install & run method
-Front the root directory if you prefer to run bash scripts
-```
-./startFrontAndBack.sh
-```
+
 
 #### Express Testing
 To test the backend server via jest enter its directory & have it run via

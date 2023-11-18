@@ -6,7 +6,8 @@
 	"main": "server.js",
 	"scripts": {
 		"test": "jest",
-		"start": "npm install && nodemon server.js && concurrently"
+		"start": "nodemon server.js",
+		"prod": "node server.js"
 	},
 	"keywords": [],
 	"author": "HyperionDev",
