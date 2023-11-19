@@ -1,0 +1,44 @@
+Scores
+Completeness: 4/4
+Efficiency: 3/4
+Style: 4/4
+Documentation: 2/4
+
+Positive aspects of the submission
+Hi Mark! Great work on your re-submitted task. Well done on completing all the task requirements and following the suggestions previously made!
+
+You create an excellent iTunes app here. Your UI was nicely styled, informative, and easy to use. You also did a great job in neatly structuring your code, improving its overall structure and professionalism. Also, your readme was well-written and instructive. I commend you on the effort and time you put into this project and congratulations on compiling your final millstone and reaching the end of your journey🙌🎊
+
+Aspects of the submission that could be improved
+🏁 Front end:
+When I log in with a new account, it seems like there are already a few favourite songs added to my favourite list. A common practice is to start with an empty list and allow the user to choose their own favourites here.
+
+When getting a search result, consider displaying more information, like the album name, album cover image and release date. The API generally give you all this information using them can greatly improve your results engagement and informativeness. With this additional information, you could create a direct link to see the entire album of a song, further adding your other navigation option to find albums.
+
+When adding or removing a favourite, a popup appears. Although it indicates an item was added or removed, a user has to click the ok button to process it. A common preach is to remove this popup entirely, avoiding extra clicks.
+
+There are many more improvements you can make to enhance user experience here. I encourage you to look at common and popular "Music Websites" to get some good ideas and implement an improved feature into your app. Remember that a good user experience (UX) can improve your app's credibility and reputation. If users find your app easy to use and visually appealing, they are more likely to trust it and recommend it to others. This can help build your brand, and reputation and increase your app's visibility and popularity. As a student, you did an awesome job here. Don't stop making improvements to the project as it is a great candidate to be showcased in your portfolio.😉
+
+
+🏁 On the Server side:
+I noticed you created two modules, one for the user and favourite. Which also requires you to write additional endpoints and manage them separately. Since the favourites only belong to a specific logged-in user, you could have added the favourites to the user module.
+
+To help improve your code modularity, consider creating another property in the user module called "favourites: Array". Here you can store all the current user's favourite media, and avoid writing additional code to handle your favourites. Storing the user's favourites directly inside the user module will make your DB documents easier to handle on the server and frontend, as won't need to create endpoints and extra logic to help identify which favourites belong to which users.
+
+🏁 Documentations:
+In your project, you seem to be using several packages like axios, sweetalert2, dompurify, yup, formik and bcrypt.
+
+For this task you didn't need any of these packages, in most cases they seem to overcomplicate your codes, for example. The purpose of JWT is secure user access, this means you don't need other measures like "bcrypt". Additionally, your code only has a short comment like 'Login', 'Register' or 'Check if user token exists in database', but there's no comment to explain what your added packages are used for or how they work.
+
+Adding comments to your code is crucial when studying as they help explain the purpose and functionality of your code in plain language. When your team needs to work with your code, well-written comments serve as valuable aids, making it easier for them to understand the thought process and implementation. It showcases your understanding of the concepts and makes your code more approachable and readable for others, including possible interviewers or hiring managers.
+
+This is particularly helpful when you revisit your code after some time, or when others (or even your future self) need to understand how your code works.
+
+Comments also serve as documentation for your code. If you ever share your code with others or work collaboratively, comments can help others understand your code without having to decipher it line by line. Before sharing this project online, I encourage you to add more and update your current comments.
+
+As a beginner, when you have no detailed and descriptive comments it could indicate that you were plagiarising and might not have a good understanding of the code you used. Mark, please consider these improvements as they will only benefit you and further enhance your capabilities as a developer.
+
+Overall feedback
+Excellent submission overall, Mark. Keep on building and improving your projects, sharpening your skills to become an outlasting candidate in the job market.
+
+I wish you the best of luck in your future endeavours. Happy coding!
