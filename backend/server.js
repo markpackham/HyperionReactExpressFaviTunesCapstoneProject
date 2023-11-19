@@ -5,15 +5,11 @@ const password = process.env.MONGODB_PASSWORD;
 
 // Import dependencies
 const express = require("express");
-
 const bodyParser = require("body-parser");
-
 // Connect to MongoDB
 const mongoose = require("mongoose");
-
 // Allow React and Express to both run on localhost
 const cors = require("cors");
-
 // Use helmet to mitigate cross-site scripting attacks, learned from
 // Helmet (no date) npm.
 // Available at: https://www.npmjs.com/package/helmet#content-security-policy (Accessed: 15 November 2023).

@@ -1,5 +1,6 @@
 const axios = require("axios");
 
+// Search for the albumn name and username the user has posted
 exports.albumInfo = async (req, res) => {
   const { albumName, artistName } = req.body;
 

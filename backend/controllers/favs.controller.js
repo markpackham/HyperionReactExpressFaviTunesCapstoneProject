@@ -1,6 +1,7 @@
 const Fav = require("../models/fav.model");
 
 // CREATE
+// Add fav to MongoDB
 exports.create = async (req, res) => {
   try {
     const favModel = new Fav({
@@ -26,6 +27,7 @@ exports.create = async (req, res) => {
 };
 
 // READ
+// Show all favs we have from db
 exports.findAll = (req, res) => {
   Fav.find()
     .then((favs) => {
@@ -40,6 +42,7 @@ exports.findAll = (req, res) => {
 };
 
 // DELETE
+// Remove fav from our database
 exports.trackId = async (req, res) => {
   try {
     const trackId = req.params.trackId;

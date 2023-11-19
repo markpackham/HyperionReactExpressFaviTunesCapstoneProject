@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 
+// Access username from Redux so can be viewed sitewide
 import { setUserName } from "../../store/userSlice";
 
 const NavbarSitewide = () => {
@@ -42,7 +43,7 @@ const NavbarSitewide = () => {
                 Album Info <i className="fa-solid fa-record-vinyl"></i>
               </Link>
             </li>
-            {/* Hide if user has token */}
+            {/* Hide if user has jwt token */}
             {!token_storage && (
               <>
                 <li className="nav-item">
@@ -57,7 +58,7 @@ const NavbarSitewide = () => {
                 </li>
               </>
             )}
-            {/* Show if user has token */}
+            {/* Show if user has jwt token */}
             {token_storage && (
               <>
                 <li className="nav-item">
