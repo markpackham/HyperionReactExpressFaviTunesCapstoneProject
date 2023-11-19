@@ -32,6 +32,8 @@ const Register = () => {
         .oneOf([Yup.ref("password"), null], "Passwords must match")
         .required("Required"),
     }),
+    // User Register
+    // Info sent to Express which then sends it to MongoDB to create our user
     onSubmit: () => {
       let username = document.getElementById("username").value;
       let password = document.getElementById("password").value;

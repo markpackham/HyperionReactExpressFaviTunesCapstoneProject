@@ -1,3 +1,4 @@
+// Connect to MongoDB so Fav model can send commands to create and delete favs
 const mongoose = require("mongoose");
 
 // fav media item so a book, movie, piece of music etc

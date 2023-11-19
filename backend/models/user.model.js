@@ -1,3 +1,4 @@
+// Connect to MongoDB so User model can send commands to create users
 const mongoose = require("mongoose");
 
 // store jwt tokens in database to identify user

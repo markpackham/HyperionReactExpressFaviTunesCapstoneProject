@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+// Basic contact form with fake phone and fake email to avoid spam
 const Contact = () => {
   return (
     <>

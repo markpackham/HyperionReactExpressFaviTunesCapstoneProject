@@ -39,6 +39,7 @@ const Home = () => {
         <Button variant="primary" onClick={() => setShowMoreInfo(true)}>
           More Info
         </Button>
+        {/* React Bootstrap modal with dummy text, exists mainly to demo modal */}
         <Modal show={show} onHide={() => setShowMoreInfo(false)}>
           <Modal.Header closeButton>
             <Modal.Title>More About This Site</Modal.Title>

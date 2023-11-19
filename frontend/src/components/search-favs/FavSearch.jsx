@@ -30,7 +30,7 @@ const FavSearch = () => {
     { value: "podcast", label: "Podcast" },
   ];
 
-  // Search Results
+  // Search Results grabbed from iTunes API
   const fetchSearchResults = async () => {
     const res = await axios.get(iTunesUrlPath, {
       params: {
@@ -48,6 +48,7 @@ const FavSearch = () => {
     setSearchResults(filteredResults);
   };
 
+  // iTunes API entry search
   useEffect(() => {
     fetchSearchResults();
   }, [searchTerm, media]);
@@ -58,6 +59,7 @@ const FavSearch = () => {
   };
 
   // Fav List
+  // Fav list data stores in MongoDB which we access via Express
   const fetchFavResults = async () => {
     const res = await axios.get(`${urlPath}`);
     // Show latest additions first
@@ -69,6 +71,7 @@ const FavSearch = () => {
     fetchFavResults();
   }, []);
 
+  // Add item to Fav list - only logged in users can do this
   const handleAddItem = (item) => {
     // Escape function if item already in list
     const result = items.find(({ trackId }) => trackId === item.trackId);
@@ -114,8 +117,9 @@ const FavSearch = () => {
       });
   };
 
-  // DELETE SECURE route
-  // http://localhost:8080/favs/search/delete-fav/:trackId
+  // DELETE SECURE route (only logged in users can do this)
+  // Send message to Express to delete a specific list entry from MongoDB
+  // Example of what a url path to Express server looks like http://localhost:8080/favs/search/delete-fav/:trackId
   const handleRemoveItem = async (trackIdToRemove) => {
     const url = `${urlPath}search/delete-fav/${trackIdToRemove}`;
 

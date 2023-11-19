@@ -31,6 +31,9 @@ const Login = () => {
         )
         .required("Required"),
     }),
+    // User Login
+    // Info sent to Express which checks the data against MongoDB and decides
+    // if the user can login
     onSubmit: () => {
       axios
         .post(`${urlPath}login`, {

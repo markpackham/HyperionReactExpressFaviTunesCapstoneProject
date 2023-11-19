@@ -14,7 +14,8 @@ const bcryptSalt = bcrypt.genSaltSync(13);
 exports.login = async (req, res) => {
   const { username, password } = req.body;
 
-  // See if user exists in DB if so send a jwt
+  // See if user exists in MongoDB if so send a jwt token to them
+  // The User model has the database searching functions
   User.findOne({
     username: username,
   })
@@ -49,6 +50,8 @@ exports.login = async (req, res) => {
 };
 
 // REGISTER
+// Save user email & password to MongoDB
+// details of a user is sent to the User model which adds it to the database
 exports.register = async (req, res) => {
   const payload = {
     name: req.body.username,
