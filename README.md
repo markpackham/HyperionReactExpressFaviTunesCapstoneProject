@@ -49,7 +49,6 @@ The code has been tested on Windows 11 using the browsers Brave, Micorsoft Edge 
 
 If you're working with your own .env file place it inside the "backend" folder and provide your own entries for
 ```
-CRYPTO_PASSWORD=
 JWT_KEY=
 MONGODB_PASSWORD=
 PORT=
