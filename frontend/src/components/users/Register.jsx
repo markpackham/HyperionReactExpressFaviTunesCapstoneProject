@@ -51,24 +51,20 @@ const Register = () => {
           "Content-Type": "application/json",
         },
         data: user,
-      })
-        .then((res) => {
-          if (res.status === 200) {
-            Swal.fire({
-              title: `You're registered`,
-              icon: "success",
-            });
-            navigate("/login");
-          } else {
-            Swal.fire({
-              title: "Registration Failed",
-              icon: "error",
-            });
-          }
-        })
-        .catch((res) => {
-          console.log(res);
-        });
+      }).then((res) => {
+        if (res.status === 200) {
+          Swal.fire({
+            title: `You're registered`,
+            icon: "success",
+          });
+          navigate("/login");
+        } else {
+          Swal.fire({
+            title: "Registration Failed",
+            icon: "error",
+          });
+        }
+      });
     },
   });
 
