@@ -67,11 +67,7 @@ const Register = () => {
           }
         })
         .catch((res) => {
-          Swal.fire({
-            title: "Registration Error",
-            text: res.response.data.message,
-            icon: "error",
-          });
+          console.log(res);
         });
     },
   });
