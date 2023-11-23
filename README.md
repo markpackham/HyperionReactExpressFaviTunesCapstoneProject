@@ -47,6 +47,13 @@ in the backend/server.js file and make sure you have 2 collections called "users
 
 The code has been tested on Windows 11 using the browsers Brave, Micorsoft Edge and LibreWolf.
 
+If you're working with your own .env file place it inside the "backend" folder and provide your own entries for
+```
+CRYPTO_PASSWORD=
+JWT_KEY=
+MONGODB_PASSWORD=
+PORT=
+``
 
 ## Check node version
 
